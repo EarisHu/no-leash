@@ -137,9 +137,9 @@ public class DogController : MonoBehaviour
         if (blood == 0) Die();
     }
 
-    void Die()
+    public void Die()
     {
-        animator.Play("Die"); // Animation
+        // animator.Play("Die"); // Animation
         Invoke("Respawn", 2.0f); // Wait for 2 seconds
     }
 
