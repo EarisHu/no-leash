@@ -18,11 +18,12 @@ public class DogController : MonoBehaviour
     void Start()
     {
         camera = Camera.main;
-        moveSpeed = 20f;
+        moveSpeed = 30f;
         blood = 5f;
-        jumpForce = 50f;
+        jumpForce = 70f;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        if (rb != null) rb.gravityScale = 8f;
         BoxCollider2D box = GetComponent<BoxCollider2D>();
         groundCheckDistance = box.size.y * 0.5f * Mathf.Abs(transform.localScale.y) + 0.05f;
     }
@@ -33,6 +34,22 @@ public class DogController : MonoBehaviour
             Die();
         HandleInput();
         BloodChange();
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "MovingPlatform")
+        {
+            transform.parent = collision.transform;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "MovingPlatform")
+        {
+            transform.parent = null;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -48,13 +65,13 @@ public class DogController : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             moveDirection = -1f;
-            transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
+            rb.velocity = new Vector2(moveSpeed * moveDirection, rb.velocity.y);
         }
         // D: right
         else if (Input.GetKey(KeyCode.D))
         {
             moveDirection = 1f;
-            transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+            rb.velocity = new Vector2(moveSpeed * moveDirection, rb.velocity.y);
         }
         // W: jump
         if (IsGrounded() && Input.GetKeyDown(KeyCode.W))
@@ -100,12 +117,19 @@ public class DogController : MonoBehaviour
 
     bool IsGrounded()
     {
-        // return Physics2D.Raycast(transform.position, Vector2.down, 0.1f);
         Vector2 origin = transform.position;
-        RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, groundCheckDistance, groundLayer);
+        float width = 4f; 
 
-        Debug.DrawRay(origin, Vector2.down * groundCheckDistance, hit.collider ? Color.green : Color.red);
-        return hit.collider != null;
+        Vector2 leftOrigin = origin + Vector2.left * width;
+        Vector2 rightOrigin = origin + Vector2.right * width;
+
+        RaycastHit2D leftHit = Physics2D.Raycast(leftOrigin, Vector2.down, groundCheckDistance, groundLayer);
+        RaycastHit2D rightHit = Physics2D.Raycast(rightOrigin, Vector2.down, groundCheckDistance, groundLayer);
+
+        Debug.DrawRay(leftOrigin, Vector2.down * groundCheckDistance, leftHit.collider ? Color.green : Color.red);
+        Debug.DrawRay(rightOrigin, Vector2.down * groundCheckDistance, rightHit.collider ? Color.green : Color.red);
+
+        return leftHit.collider != null || rightHit.collider != null;
     }
 
     void BloodChange()
@@ -114,9 +138,9 @@ public class DogController : MonoBehaviour
         if (blood == 0) Die();
     }
 
-    void Die()
+    public void Die()
     {
-        animator.Play("Die"); // Animation
+        // animator.Play("Die"); // Animation
         Invoke("Respawn", 2.0f); // Wait for 2 seconds
     }
 
@@ -124,21 +148,5 @@ public class DogController : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "MovingPlatform")
-        {
-            transform.parent = collision.transform;
-        }
-    }
-
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "MovingPlatform")
-        {
-            transform.parent = null;
-        }
     }
 }
