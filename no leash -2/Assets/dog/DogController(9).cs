@@ -144,7 +144,7 @@ public class DogController : MonoBehaviour
     public void Die()
     {
         // animator.Play("Die"); // Animation
-        Invoke("Respawn", 2.0f); // Wait for 2 seconds
+        // Invoke("Respawn", 2.0f); // Wait for 2 seconds
     }
 
     public void Win()
