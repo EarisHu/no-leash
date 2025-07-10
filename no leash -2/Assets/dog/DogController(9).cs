@@ -20,7 +20,7 @@ public class DogController : MonoBehaviour
         camera = Camera.main;
         moveSpeed = 30f;
         blood = 5f;
-        jumpForce = 100f;
+        jumpForce = 70f;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         BoxCollider2D box = GetComponent<BoxCollider2D>();
@@ -54,22 +54,6 @@ public class DogController : MonoBehaviour
             transform.parent = null;
         }
     }
-
-    // void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     if (collision.gameObject.tag == "MovingPlatform")
-    //     {
-    //         transform.parent = collision.transform;
-    //     }
-    // }
-
-    // void OnCollisionExit2D(Collision2D collision)
-    // {
-    //     if (collision.gameObject.tag == "MovingPlatform")
-    //     {
-    //         transform.parent = null;
-    //     }
-    // }
 
     void OnTriggerEnter2D(Collider2D other)
     {

@@ -6,11 +6,12 @@ TagManager:
   tags:
   - MovingPlatform
   - Dog
+  - static_platform
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - 
   - Water
   - UI
   - Ground
