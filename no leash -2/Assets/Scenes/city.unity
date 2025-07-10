@@ -6614,8 +6614,8 @@ GameObject:
   - component: {fileID: 1559608678}
   - component: {fileID: 1559608677}
   - component: {fileID: 1559608676}
-  - component: {fileID: 1559608675}
   - component: {fileID: 1559608674}
+  - component: {fileID: 1559608680}
   m_Layer: 0
   m_Name: dog
   m_TagString: Dog
@@ -6675,23 +6675,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1559608675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1559608673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37a5de83092a6114aa7832c24a3e49fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 0
-  jumpForce: 0
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!50 &1559608676
 Rigidbody2D:
   serializedVersion: 4
@@ -6801,6 +6784,23 @@ Transform:
   - {fileID: 1167553017}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1559608680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559608673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08bb77fde8ffe5b409e498b06c24dcf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  jumpForce: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &1737356963
 GameObject:
   m_ObjectHideFlags: 0

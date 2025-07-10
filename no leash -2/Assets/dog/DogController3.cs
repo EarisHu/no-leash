@@ -55,21 +55,21 @@ public class DogController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "MovingPlatform")
-        {
-            transform.parent = collision.transform;
-        }
-    }
+    // void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     if (collision.gameObject.tag == "MovingPlatform")
+    //     {
+    //         transform.parent = collision.transform;
+    //     }
+    // }
 
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "MovingPlatform")
-        {
-            transform.parent = null;
-        }
-    }
+    // void OnCollisionExit2D(Collision2D collision)
+    // {
+    //     if (collision.gameObject.tag == "MovingPlatform")
+    //     {
+    //         transform.parent = null;
+    //     }
+    // }
 
     void OnTriggerEnter2D(Collider2D other)
     {

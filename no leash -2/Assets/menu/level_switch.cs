@@ -7,4 +7,8 @@ public class level_switch : MonoBehaviour
     {
         SceneManager.LoadScene("city"); 
     }
+    public void Loadnature()
+    {
+        SceneManager.LoadScene("nature");
+    }
 }
