@@ -33,6 +33,26 @@ public class DogController : MonoBehaviour
             Die();
         HandleInput();
         BloodChange();
+        if (transform.position.x >= 770)
+        {
+            Win();
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "MovingPlatform")
+        {
+            transform.parent = collision.transform;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "MovingPlatform")
+        {
+            transform.parent = null;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -117,7 +137,7 @@ public class DogController : MonoBehaviour
     bool IsGrounded()
     {
         Vector2 origin = transform.position;
-        float width = 4f; 
+        float width = 7.5f; 
 
         Vector2 leftOrigin = origin + Vector2.left * width;
         Vector2 rightOrigin = origin + Vector2.right * width;
@@ -141,6 +161,11 @@ public class DogController : MonoBehaviour
     {
         // animator.Play("Die"); // Animation
         Invoke("Respawn", 2.0f); // Wait for 2 seconds
+    }
+
+    public void Win()
+    {
+        SceneManager.LoadScene("menu");
     }
 
     void Respawn()

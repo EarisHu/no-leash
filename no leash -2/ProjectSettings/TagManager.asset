@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - MovingPlatform
+  - Dog
   layers:
   - Default
   - TransparentFX
@@ -12,7 +13,7 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 
@@ -42,6 +43,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: blackground
+    uniqueID: 688457825
+    locked: 0
+  - name: platform
+    uniqueID: 1851429403
+    locked: 0
+  - name: fog
+    uniqueID: 3408241441
+    locked: 0
   - name: front
-    uniqueID: 1374795727
+    uniqueID: 2359343555
     locked: 0
