@@ -2641,7 +2641,7 @@ GameObject:
   - component: {fileID: 234937339}
   - component: {fileID: 234937341}
   - component: {fileID: 234937342}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick4
   m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
@@ -2888,8 +2888,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 742035892}
   smoothSpeed: 0.125
-  minPosition: {x: -100, y: -50}
-  maxPosition: {x: 100, y: 50}
+  minPosition: {x: -74.3, y: -50}
+  maxPosition: {x: 600, y: 50}
 --- !u!1 &742035890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2993,7 +2993,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -3087,7 +3087,7 @@ MonoBehaviour:
   jumpForce: 0
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
 --- !u!1 &964000829
 GameObject:
   m_ObjectHideFlags: 0
@@ -3229,7 +3229,7 @@ GameObject:
   - component: {fileID: 1420422264}
   - component: {fileID: 1420422265}
   - component: {fileID: 1420422266}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick1
   m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
@@ -3381,7 +3381,7 @@ GameObject:
   - component: {fileID: 1443790451}
   - component: {fileID: 1443790453}
   - component: {fileID: 1443790454}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick2
   m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
@@ -3533,7 +3533,7 @@ GameObject:
   - component: {fileID: 2061672882}
   - component: {fileID: 2061672884}
   - component: {fileID: 2061672885}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick3
   m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
