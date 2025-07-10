@@ -18,8 +18,9 @@ public class led : MonoBehaviour
 
     void Start()
     {
-        a = 558f;
-        b = 618f; 
+        a = 575f;
+        b = 633f; 
+        dog = GameObject.FindWithTag("Dog");
         spriteRenderer = GetComponent<SpriteRenderer>();
         SetLightColor();
     }
