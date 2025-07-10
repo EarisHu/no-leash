@@ -57,7 +57,7 @@ public class DogController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "Enemy")
+        if (other.gameObject.name == "enemy1")
             Die();
     }
 
@@ -144,7 +144,7 @@ public class DogController : MonoBehaviour
     public void Die()
     {
         // animator.Play("Die"); // Animation
-        // Invoke("Respawn", 2.0f); // Wait for 2 seconds
+        Invoke("Respawn", 0f); // Wait for 2 seconds
     }
 
     public void Win()
