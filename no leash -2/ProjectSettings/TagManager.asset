@@ -49,6 +49,9 @@ TagManager:
   - name: platform
     uniqueID: 1851429403
     locked: 0
+  - name: fog
+    uniqueID: 3408241441
+    locked: 0
   - name: front
     uniqueID: 2359343555
     locked: 0
