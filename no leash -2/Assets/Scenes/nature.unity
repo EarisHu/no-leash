@@ -2889,7 +2889,7 @@ MonoBehaviour:
   target: {fileID: 742035892}
   smoothSpeed: 0.125
   minPosition: {x: -74.3, y: -50}
-  maxPosition: {x: 600, y: 50}
+  maxPosition: {x: 650, y: 50}
 --- !u!1 &742035890
 GameObject:
   m_ObjectHideFlags: 0

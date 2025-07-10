@@ -20,7 +20,7 @@ public class DogController : MonoBehaviour
         camera = Camera.main;
         moveSpeed = 30f;
         blood = 5f;
-        jumpForce = 70f;
+        jumpForce = 100f;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         BoxCollider2D box = GetComponent<BoxCollider2D>();
