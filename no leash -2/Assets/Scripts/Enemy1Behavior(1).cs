@@ -21,7 +21,7 @@ public class EnemyBehavior1 : MonoBehaviour
         speed = 10f;
         patrolLeftX = 337.2f;
         patrolRightX = 490.9f;
-        scale = 15f;
+        scale = 5f;
         dogObject = GameObject.FindWithTag("Dog");
         if (dogObject != null)
             dogTransform = dogObject.transform;
