@@ -14,7 +14,7 @@ public class exit : MonoBehaviour
         if (other.CompareTag(collisionTag))
         {
             Debug.Log("qqqq");
-            SceneManager.LoadScene("nature");
+            SceneManager.LoadScene("nature_1");
         }
     }
 }

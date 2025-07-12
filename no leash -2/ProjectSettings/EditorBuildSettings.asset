@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/nature.unity
     guid: 30d9c3b03c5fc8e43b41937bd1b1687a
+  - enabled: 1
+    path: Assets/Scenes/nature_1.unity
+    guid: 9cdeb72945bbfd74483170e57c7722df
   m_configObjects: {}

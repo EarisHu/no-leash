@@ -10,6 +10,7 @@ public class Friend : MonoBehaviour
     public float patrolRightX;
     public float speed;
     private float scale;
+    private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
@@ -17,9 +18,10 @@ public class Friend : MonoBehaviour
         dog = GameObject.Find("dog");
         following = false;
         speed = 10f;
-        patrolLeftX = 337.2f;
-        patrolRightX = 490.9f;
+        patrolLeftX = 715.6f;
+        patrolRightX = 777.1f;
         scale = 5f;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -37,6 +39,7 @@ public class Friend : MonoBehaviour
             // 变成dog的子物体
             transform.SetParent(dog.transform);
             following = true;
+            transform.localPosition = new Vector3(1f, 0f, 0f);  // Set local position
         }
     }
 
