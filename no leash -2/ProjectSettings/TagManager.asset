@@ -8,6 +8,7 @@ TagManager:
   - Dog
   - static_platform
   - dog
+  - meat
   layers:
   - Default
   - TransparentFX
@@ -57,6 +58,9 @@ TagManager:
   - name: front
     uniqueID: 2359343555
     locked: 0
-  - name: New Layer 5
+  - name: meat
     uniqueID: 4261414005
+    locked: 0
+  - name: New Layer 6
+    uniqueID: 3825948171
     locked: 0

@@ -20,7 +20,7 @@ public class DogController : MonoBehaviour
         camera = Camera.main;
         moveSpeed = 30f;
         blood = 5f;
-        jumpForce = 100f;
+        jumpForce = 60f;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         BoxCollider2D box = GetComponent<BoxCollider2D>();
@@ -46,6 +46,11 @@ public class DogController : MonoBehaviour
         {
             transform.parent = collision.transform;
         }
+        else if (collision.gameObject.tag == "meat")
+        {
+            jumpForce = 110f;
+            moveSpeed = 55f;
+        }
     }
 
     void OnCollisionExit2D(Collision2D collision)
@@ -60,6 +65,11 @@ public class DogController : MonoBehaviour
     {
         if (other.gameObject.name == "enemy1")
             Die();
+        else if (other.gameObject.name == "meat1")
+        {
+            jumpForce = 140f;
+            moveSpeed = 65f;
+        }
     }
 
     void HandleInput()
