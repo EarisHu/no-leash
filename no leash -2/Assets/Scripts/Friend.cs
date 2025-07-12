@@ -18,8 +18,8 @@ public class Friend : MonoBehaviour
         dog = GameObject.Find("dog");
         following = false;
         speed = 10f;
-        patrolLeftX = 715.6f;
-        patrolRightX = 777.1f;
+        patrolLeftX = 1068.1f;
+        patrolRightX = 1155f;
         scale = 5f;
         rb = GetComponent<Rigidbody2D>();
     }
