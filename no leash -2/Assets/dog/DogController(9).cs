@@ -20,7 +20,7 @@ public class DogController : MonoBehaviour
         camera = Camera.main;
         moveSpeed = 30f;
         blood = 5f;
-        jumpForce = 70f;
+        jumpForce = 100f;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         BoxCollider2D box = GetComponent<BoxCollider2D>();
@@ -33,12 +33,11 @@ public class DogController : MonoBehaviour
             Die();
         HandleInput();
         BloodChange();
-        if (transform.position.x >= 750)
-        {
-            Debug.Log("oi");
-            SceneManager.LoadScene("nature");
-        }
-
+        //if (transform.position.x >= 750)
+        //{
+        //    Debug.Log("oi");
+        //    SceneManager.LoadScene("nature");
+        //}
     }
 
     void OnCollisionEnter2D(Collision2D collision)
