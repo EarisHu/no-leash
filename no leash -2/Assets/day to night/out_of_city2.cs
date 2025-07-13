@@ -16,7 +16,7 @@ public class out_of_city2 : MonoBehaviour
     {
         if (other.CompareTag("Dog"))
         {
-            SceneManager.LoadScene("city3");
+            SceneManager.LoadScene("nature");
         }
     }
 }

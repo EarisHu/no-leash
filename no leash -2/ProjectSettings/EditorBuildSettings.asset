@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/nature_1.unity
     guid: 9cdeb72945bbfd74483170e57c7722df
+  - enabled: 1
+    path: Assets/Scenes/city2.unity
+    guid: 13f634e5873cea745b95d48823d14442
   m_configObjects: {}

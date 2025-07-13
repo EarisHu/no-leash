@@ -1,4 +1,4 @@
-// Open the trash bin? 
+﻿// Open the trash bin? 
 // Animation? 
 
 using UnityEngine;
@@ -14,9 +14,11 @@ public class DogController : MonoBehaviour
     public float jumpForce;
     private float groundCheckDistance;
     public LayerMask groundLayer;
+    public bool isDead;
 
     void Start()
     {
+        isDead = false;
         camera = Camera.main;
         moveSpeed = 30f;
         blood = 5f;
@@ -79,59 +81,66 @@ public class DogController : MonoBehaviour
     void HandleInput()
     {
         float moveDirection = 0f;
-        // A: left
-        if (Input.GetKey(KeyCode.A))
+        // A: left
+        if (Input.GetKey(KeyCode.A))
         {
             moveDirection = -1f;
             transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
         }
-        // D: right
-        else if (Input.GetKey(KeyCode.D))
+        // D: right
+        else if (Input.GetKey(KeyCode.D))
         {
             moveDirection = 1f;
             transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
         }
-        // W: jump
-        if (IsGrounded() && Input.GetKeyDown(KeyCode.W))
+        // W: jump
+        if (IsGrounded() && Input.GetKeyDown(KeyCode.W))
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
-        // S: pick up bones
-        if (Input.GetKeyDown(KeyCode.S))
+        // S: pick up bones
+        if (Input.GetKeyDown(KeyCode.S))
         {
-            // animator.Play("PickUpBone"); // Animation
-            blood += 0.15f;
+            // animator.Play("PickUpBone"); // Animation
+            blood += 0.15f;
         }
 
-        //appearance
-        if (!IsGrounded())
+        //appearance
+        if (!IsGrounded())
         {
             animator.Play("jump");
         }
         else if (Input.GetKey(KeyCode.A))
         {
             animator.Play("walk");
-            // animator.Play("Run"); // Animation
-            Vector3 scale = transform.localScale;
-            scale.x = Mathf.Abs(scale.x);
-            transform.localScale = scale;
         }
         else if (Input.GetKey(KeyCode.D))
         {
             animator.Play("walk");
-            // animator.Play("Run"); // Animation
-            Vector3 scale = transform.localScale;
-            scale.x = -Mathf.Abs(scale.x);
-            transform.localScale = scale;
-        }else if(Input.GetKey(KeyCode.S))
+        }
+        else if (Input.GetKey(KeyCode.S))
         {
             animator.Play("static");
         }
         else
         {
-            animator.Play("jump");
+            animator.Play("static");
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            Vector3 scale = transform.localScale;
+            scale.x = -Mathf.Abs(scale.x);
+            transform.localScale = scale;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            Vector3 scale = transform.localScale;
+            scale.x = Mathf.Abs(scale.x);
+            transform.localScale = scale;
         }
     }
+
 
     bool IsGrounded()
     {
