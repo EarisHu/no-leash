@@ -18,7 +18,7 @@ public class tree_rotate : MonoBehaviour
         if (other.gameObject.name == "dog") 
         {
             animator.SetTrigger("Hit");
-            treeCollider.isTrigger = false;
+            // treeCollider.isTrigger = false;
         }
     }
 

@@ -35,7 +35,7 @@ public class DogController3 : MonoBehaviour
 
     void Update()
     {
-        if (!isDead && transform.position.y <= -150)
+        if (!isDead && (transform.position.y <= -150 || transform.position.y >= 150))
         {
             Debug.Log("out");
             Die();
@@ -52,6 +52,14 @@ public class DogController3 : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.name == "friend")
+        {
+            ifwith = true;
+            // if (!IsGrounded())
+            //     animator.Play("jump_with_friend");
+            // else
+            //     animator.Play("static_with_friend");
+        }
         if (collision.gameObject.tag == "MovingPlatform")
         {
             transform.parent = collision.transform;
@@ -100,85 +108,89 @@ public class DogController3 : MonoBehaviour
         float moveDirection = 0f;
         if (!isDead)
         {
-            moveDirection = -1f;
-            transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
-        }
-        // D: right
-        else if (Input.GetKey(KeyCode.D))
-        {
-            moveDirection = 1f;
-            transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
-        }
-        // W: jump
-        if (IsGrounded() && Input.GetKeyDown(KeyCode.W))
-        {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        }
-        // S: pick up bones
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            // animator.Play("PickUpBone"); // Animation
-            blood += 0.15f;
-        }
-        if (!ifwith)
-        {
-            //appearance
-            if (!IsGrounded())
+            if (Input.GetKey(KeyCode.A))
             {
-                animator.Play("jump");
+                moveDirection = -1f;
+                transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
             }
-            else if (Input.GetKey(KeyCode.A))
-            {
-                animator.Play("walk");
-            }
-            else if (Input.GetKey(KeyCode.D))
-            {
-                animator.Play("walk");
-            }
-            else if (Input.GetKey(KeyCode.S))
-            {
-                animator.Play("static");
-            }
-            else
-            {
-                animator.Play("static");
-            }
-        }
-        else
-        {
-            if (!IsGrounded())
-            {
-                animator.Play("jump_with_friend");
-            }
-            else if (Input.GetKey(KeyCode.A))
-            {
-                animator.Play("walk_with_friend");
-            }
-            else if (Input.GetKey(KeyCode.D))
-            {
-                animator.Play("walk_with_friend");
-            }
-            else if (Input.GetKey(KeyCode.S))
-            {
-                animator.Play("static_with_friend");
-            }
-            else
-            {
-                animator.Play("static_with_friend");
-            }
-        }
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            Vector3 scale = transform.localScale;
-            scale.x = -Mathf.Abs(scale.x);
-            transform.localScale = scale;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            Vector3 scale = transform.localScale;
-            scale.x = Mathf.Abs(scale.x);
-            transform.localScale = scale;
+            // D: right
+            else if (Input.GetKey(KeyCode.D))
+            {
+                moveDirection = 1f;
+                transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+            }
+            // W: jump
+            if (IsGrounded() && Input.GetKeyDown(KeyCode.W))
+            {
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }
+            // S: pick up bones
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                // animator.Play("PickUpBone"); // Animation
+                blood += 0.15f;
+            }
+            if (!ifwith)
+            {
+                //appearance
+                if (!IsGrounded())
+                {
+                    animator.Play("jump");
+                }
+                else if (Input.GetKey(KeyCode.A))
+                {
+                    animator.Play("walk");
+                }
+                else if (Input.GetKey(KeyCode.D))
+                {
+                    animator.Play("walk");
+                }
+                else if (Input.GetKey(KeyCode.S))
+                {
+                    animator.Play("static");
+                }
+                else
+                {
+                    animator.Play("static");
+                }
+            }
+            else
+            {
+                if (!IsGrounded())
+                {
+                    animator.Play("jump_with_friend");
+                }
+                else if (Input.GetKey(KeyCode.A))
+                {
+                    animator.Play("walk_with_friend");
+                }
+                else if (Input.GetKey(KeyCode.D))
+                {
+                    animator.Play("walk_with_friend");
+                }
+                else if (Input.GetKey(KeyCode.S))
+                {
+                    animator.Play("static_with_friend");
+                }
+                else
+                {
+                    animator.Play("static_with_friend");
+                }
+            }
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                Vector3 scale = transform.localScale;
+                scale.x = -Mathf.Abs(scale.x);
+                transform.localScale = scale;
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                Vector3 scale = transform.localScale;
+                scale.x = Mathf.Abs(scale.x);
+                transform.localScale = scale;
+            }
         }
     }
 
