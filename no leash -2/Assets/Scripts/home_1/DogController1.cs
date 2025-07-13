@@ -31,27 +31,6 @@ public class DogController1 : MonoBehaviour
 
     void Update()
     {
-        // if (targetObject != null && popPrefab != null)
-        // {
-        //     // 计算当前物体与目标物体的2D距离
-        //     float distance = Vector2.Distance(
-        //     new Vector2(transform.position.x, transform.position.y),
-        //     new Vector2(targetObject.transform.position.x, targetObject.transform.position.y)
-        //     );
-        //     // 距离检测与生成逻辑
-        //     if (distance < spawnThreshold)
-        //     {
-        //         if (!hasTriggered)
-        //         {
-        //             Instantiate(popPrefab, transform.position, Quaternion.identity);
-        //             hasTriggered = true; // 防止同一次接近中重复生成
-        //         }
-        //     }
-        //     else
-        //     {
-        //         hasTriggered = false; // 重置触发状态
-        //     }
-        // }
         if (transform.position.y < (camera.transform.position.y - camera.orthographicSize))
             Die();
         HandleInput();
@@ -60,16 +39,28 @@ public class DogController1 : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "Enemy") {
-            Die();
-        }
+        // if (other.gameObject.name == "Enemy")
+        // {
+        //     Die();
+        // }
         if (other.gameObject.name == "meat")
         {
             jumpForce = 140f;
             moveSpeed = 65f;
         }
-        
-            
+        if (other.gameObject.CompareTag("Badmeat"))
+        {
+            jumpForce = 70f;
+            moveSpeed = 20f;
+        }
+        if (other.gameObject.CompareTag("Chocolate"))
+        {
+            Die();
+        }
+        if (other.gameObject.CompareTag("elec"))
+        {
+            Die();
+        }
     }
 
     void HandleInput()
@@ -117,7 +108,8 @@ public class DogController1 : MonoBehaviour
             Vector3 scale = transform.localScale;
             scale.x = -Mathf.Abs(scale.x);
             transform.localScale = scale;
-        }else if(Input.GetKey(KeyCode.S))
+        }
+        else if (Input.GetKey(KeyCode.S))
         {
             animator.Play("static");
         }
@@ -139,7 +131,7 @@ public class DogController1 : MonoBehaviour
     bool IsGrounded()
     {
         Vector2 origin = transform.position;
-        float width = 7.5f; 
+        float width = 7.5f;
 
         Vector2 leftOrigin = origin + Vector2.left * width;
         Vector2 rightOrigin = origin + Vector2.right * width;
