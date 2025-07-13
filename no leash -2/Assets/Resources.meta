@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:no leash -2/Assets/Resources.meta
 guid: e3a25cbe6d58d7440b012f5d7ec54204
 folderAsset: yes
 DefaultImporter:
+========
+guid: 5911296ecf2e99b40b7bce1919d78237
+NativeFormatImporter:
+>>>>>>>> Nature-&-City:no leash -2/Assets/things/Backgrounds/backgroundForest.asset.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

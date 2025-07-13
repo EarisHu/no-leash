@@ -8,6 +8,11 @@ TagManager:
   - Badmeat
   - Chocolate
   - elec
+  - MovingPlatform
+  - Dog
+  - static_platform
+  - dog
+  - meat
   layers:
   - Default
   - TransparentFX
@@ -15,7 +20,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 
@@ -47,4 +52,21 @@ TagManager:
     locked: 0
   - name: New Layer 1
     uniqueID: 3095446337
+  - name: blackground
+    uniqueID: 688457825
+    locked: 0
+  - name: platform
+    uniqueID: 1851429403
+    locked: 0
+  - name: fog
+    uniqueID: 3408241441
+    locked: 0
+  - name: front
+    uniqueID: 2359343555
+    locked: 0
+  - name: meat
+    uniqueID: 4261414005
+    locked: 0
+  - name: night
+    uniqueID: 3825948171
     locked: 0

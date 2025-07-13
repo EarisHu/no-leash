@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:no leash -2/Assets/map/home 1.asset.meta
 guid: a0c2c00aa55a44744b0d1b9e251b58fc
+========
+guid: fd7da61776d8d6741b4fa93901af7cc5
+>>>>>>>> Nature-&-City:no leash -2/Assets/things/Backgrounds/backgroundDesert.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000
