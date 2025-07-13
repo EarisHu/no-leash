@@ -6,12 +6,12 @@ public class gravity_night : MonoBehaviour
 {
     public GameObject dog;
     private Rigidbody2D dogRb;
-    private DogController dogScript;
+    private DogController3 dogScript;
 
     void Start()
     {
         dog = GameObject.FindWithTag("Dog");
-        dogScript = dog.GetComponent<DogController>();
+        dogScript = dog.GetComponent<DogController3>();
         dogRb = dog.GetComponent<Rigidbody2D>();
     }
 

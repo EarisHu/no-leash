@@ -30,7 +30,7 @@ public class car : MonoBehaviour
     {
         if (other.CompareTag("Dog"))
         {
-            DogController dogScript = other.GetComponent<DogController>();
+            DogController3 dogScript = other.GetComponent<DogController3>();
             if (dogScript != null)
             {
                 dogScript.Die();  

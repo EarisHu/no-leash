@@ -4,7 +4,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DogController : MonoBehaviour
+public class DogController3 : MonoBehaviour
 {
     private Animator animator;
     private Rigidbody2D rb;
@@ -16,9 +16,11 @@ public class DogController : MonoBehaviour
     public LayerMask groundLayer;
     public bool isDead;
     public Vector2 way;
+    public bool ifwith;
 
     void Start()
     {
+        ifwith = false;
         way = Vector2.down;
         isDead = false;
         camera = Camera.main;
@@ -98,29 +100,29 @@ public class DogController : MonoBehaviour
         float moveDirection = 0f;
         if (!isDead)
         {
-            // A: left
-            if (Input.GetKey(KeyCode.A))
-            {
-                moveDirection = -1f;
-                transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
-            }
-            // D: right
-            else if (Input.GetKey(KeyCode.D))
-            {
-                moveDirection = 1f;
-                transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
-            }
-            // W: jump
-            if (IsGrounded() && Input.GetKeyDown(KeyCode.W))
-            {
-                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            }
-            // S: pick up bones
-            //         if (Input.GetKeyDown(KeyCode.S))
-            //         {
-            //             // animator.Play("PickUpBone"); // Animation
-            //             blood += 0.15f;
-            //         }
+            moveDirection = -1f;
+            transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
+        }
+        // D: right
+        else if (Input.GetKey(KeyCode.D))
+        {
+            moveDirection = 1f;
+            transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+        }
+        // W: jump
+        if (IsGrounded() && Input.GetKeyDown(KeyCode.W))
+        {
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+        // S: pick up bones
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            // animator.Play("PickUpBone"); // Animation
+            blood += 0.15f;
+        }
+        if (!ifwith)
+        {
+            //appearance
             if (!IsGrounded())
             {
                 animator.Play("jump");
@@ -141,19 +143,42 @@ public class DogController : MonoBehaviour
             {
                 animator.Play("static");
             }
-            //appearance
-            if (Input.GetKey(KeyCode.A))
+        }
+        else
+        {
+            if (!IsGrounded())
             {
-                Vector3 scale = transform.localScale;
-                scale.x = -Mathf.Abs(scale.x);
-                transform.localScale = scale;
+                animator.Play("jump_with_friend");
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                animator.Play("walk_with_friend");
             }
             else if (Input.GetKey(KeyCode.D))
             {
-                Vector3 scale = transform.localScale;
-                scale.x = Mathf.Abs(scale.x);
-                transform.localScale = scale;
+                animator.Play("walk_with_friend");
             }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                animator.Play("static_with_friend");
+            }
+            else
+            {
+                animator.Play("static_with_friend");
+            }
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            Vector3 scale = transform.localScale;
+            scale.x = -Mathf.Abs(scale.x);
+            transform.localScale = scale;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            Vector3 scale = transform.localScale;
+            scale.x = Mathf.Abs(scale.x);
+            transform.localScale = scale;
         }
     }
 
@@ -196,7 +221,7 @@ public class DogController : MonoBehaviour
 
     public void Die()
     {
-        if (isDead) return; 
+        if (isDead) return;
         isDead = true;
         animator.Play("die"); // Animation
         Invoke("Respawn", 2f); // Wait for 2 seconds
