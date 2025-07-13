@@ -3,9 +3,6 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< Updated upstream
-  tags: []
-=======
   tags:
   - MovingPlatform
   - Dog
@@ -15,7 +12,6 @@ TagManager:
   - Night
   - map1
   - map2
->>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
@@ -23,7 +19,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 
@@ -53,8 +49,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-<<<<<<< Updated upstream
-=======
   - name: black
     uniqueID: 4261414005
     locked: 0
@@ -70,4 +64,3 @@ TagManager:
   - name: front
     uniqueID: 2359343555
     locked: 0
->>>>>>> Stashed changes

@@ -19,13 +19,9 @@ public class DogController : MonoBehaviour
     void Start()
     {
         camera = Camera.main;
-        moveSpeed = 20f;
+        moveSpeed = 30f;
         blood = 5f;
-<<<<<<< Updated upstream
-        jumpForce = 50f;
-=======
         jumpForce = 80f;
->>>>>>> Stashed changes
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         BoxCollider2D box = GetComponent<BoxCollider2D>();
@@ -35,12 +31,6 @@ public class DogController : MonoBehaviour
 
     void Update()
     {
-<<<<<<< Updated upstream
-        if (transform.position.y <= -camera.orthographicSize)
-            Die();
-        HandleInput();
-        BloodChange();
-=======
         if (!isDead && transform.position.y <= -150)
         {
             Debug.Log("out");
@@ -70,12 +60,11 @@ public class DogController : MonoBehaviour
         {
             transform.parent = null;
         }
->>>>>>> Stashed changes
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "Enemy")
+        if (other.gameObject.name == "enemy1")
             Die();
     }
 
@@ -144,12 +133,20 @@ public class DogController : MonoBehaviour
 
     bool IsGrounded()
     {
-        // return Physics2D.Raycast(transform.position, Vector2.down, 0.1f);
         Vector2 origin = transform.position;
-        RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, groundCheckDistance, groundLayer);
+        float width = 7.5f; 
 
-        Debug.DrawRay(origin, Vector2.down * groundCheckDistance, hit.collider ? Color.green : Color.red);
-        return hit.collider != null;
+        Vector2 leftOrigin = origin + Vector2.left * width;
+        Vector2 rightOrigin = origin + Vector2.right * width;
+
+        RaycastHit2D leftHit = Physics2D.Raycast(leftOrigin, Vector2.down, groundCheckDistance, groundLayer);
+        RaycastHit2D rightHit = Physics2D.Raycast(rightOrigin, Vector2.down, groundCheckDistance, groundLayer);
+        RaycastHit2D centerHit = Physics2D.Raycast(origin, Vector2.down, groundCheckDistance, groundLayer);
+
+        Debug.DrawRay(leftOrigin, Vector2.down * groundCheckDistance, leftHit.collider ? Color.green : Color.red);
+        Debug.DrawRay(rightOrigin, Vector2.down * groundCheckDistance, rightHit.collider ? Color.green : Color.red);
+
+        return leftHit.collider != null || rightHit.collider != null || centerHit.collider != null;
     }
 
     void BloodChange()
@@ -158,12 +155,8 @@ public class DogController : MonoBehaviour
         if (blood == 0) Die();
     }
 
-    void Die()
+    public void Die()
     {
-<<<<<<< Updated upstream
-        animator.Play("Die"); // Animation
-        Invoke("Respawn", 2.0f); // Wait for 2 seconds
-=======
         if (isDead) return; 
         isDead = true;
         // animator.Play("Die"); // Animation
@@ -175,7 +168,6 @@ public class DogController : MonoBehaviour
     public void Win()
     {
         SceneManager.LoadScene("menu");
->>>>>>> Stashed changes
     }
 
     void Respawn()
