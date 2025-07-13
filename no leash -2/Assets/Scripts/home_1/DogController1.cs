@@ -15,9 +15,11 @@ public class DogController1 : MonoBehaviour
     public float jumpForce;
     private float groundCheckDistance;
     public LayerMask groundLayer;
+    public bool isDead;
 
     void Start()
     {
+        isDead = false;
         // spawnThreshold = 150f;
         camera = Camera.main;
         blood = 5f;
@@ -65,57 +67,65 @@ public class DogController1 : MonoBehaviour
 
     void HandleInput()
     {
-        float moveDirection;
-        // A: left
-        if (Input.GetKey(KeyCode.A))
+        float moveDirection = 0f;
+        if (!isDead)
         {
-            moveDirection = -1f;
-            transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
-        }
-        // D: right
-        else if (Input.GetKey(KeyCode.D))
-        {
-            moveDirection = 1f;
-            transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
-        }
-        // W: jump
-        if (IsGrounded() && Input.GetKeyDown(KeyCode.W))
-        {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        }
-        // S: pick up bones
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            // animator.Play("PickUpBone"); // Animation
-            blood += 0.15f;
-        }
-
-        //appearance
-        if (!IsGrounded())
-        {
-            animator.Play("jump");
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            animator.Play("walk");
-            Vector3 scale = transform.localScale;
-            scale.x = Mathf.Abs(scale.x);
-            transform.localScale = scale;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            animator.Play("walk");
-            Vector3 scale = transform.localScale;
-            scale.x = -Mathf.Abs(scale.x);
-            transform.localScale = scale;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            animator.Play("static");
-        }
-        else
-        {
-            animator.Play("jump");
+            // A: left
+            if (Input.GetKey(KeyCode.A))
+            {
+                moveDirection = -1f;
+                transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
+            }
+            // D: right
+            else if (Input.GetKey(KeyCode.D))
+            {
+                moveDirection = 1f;
+                transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+            }
+            // W: jump
+            if (IsGrounded() && Input.GetKeyDown(KeyCode.W))
+            {
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }
+            // S: pick up bones
+            //         if (Input.GetKeyDown(KeyCode.S))
+            //         {
+            //             // animator.Play("PickUpBone"); // Animation
+            //             blood += 0.15f;
+            //         }
+            if (!IsGrounded())
+            {
+                animator.Play("jump");
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                animator.Play("walk");
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                animator.Play("walk");
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                animator.Play("static");
+            }
+            else
+            {
+                animator.Play("static");
+            }
+            //appearance
+            if (Input.GetKey(KeyCode.A))
+            {
+                Vector3 scale = transform.localScale;
+                scale.x = -Mathf.Abs(scale.x);
+                transform.localScale = scale;
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                Vector3 scale = transform.localScale;
+                scale.x = Mathf.Abs(scale.x);
+                transform.localScale = scale;
+            }
         }
     }
 
@@ -153,11 +163,14 @@ public class DogController1 : MonoBehaviour
 
     void Die()
     {
-        // animator.Play("Die"); // Animation
-        Invoke("Respawn", 2.0f); // Wait for 2 seconds
+        if (isDead) return; 
+        isDead = true;
+        animator.Play("die");
+        Invoke("Respawn", 2f);
     }
 
-    void Respawn()
+
+    public void Respawn()
     {
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);

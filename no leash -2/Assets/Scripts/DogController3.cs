@@ -96,63 +96,64 @@ public class DogController : MonoBehaviour
     void HandleInput()
     {
         float moveDirection = 0f;
-        // A: left
-        if (Input.GetKey(KeyCode.A))
+        if (!isDead)
         {
-            moveDirection = -1f;
-            transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
-        }
-        // D: right
-        else if (Input.GetKey(KeyCode.D))
-        {
-            moveDirection = 1f;
-            transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
-        }
-        // W: jump
-        if (IsGrounded() && Input.GetKeyDown(KeyCode.W))
-        {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        }
-        // S: pick up bones
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            // animator.Play("PickUpBone"); // Animation
-            blood += 0.15f;
-        }
-
-        //appearance
-        if (!IsGrounded())
-        {
-            animator.Play("jump");
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            animator.Play("walk");
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            animator.Play("walk");
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            animator.Play("static");
-        }
-        else
-        {
-            animator.Play("static");
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            Vector3 scale = transform.localScale;
-            scale.x = -Mathf.Abs(scale.x);
-            transform.localScale = scale;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            Vector3 scale = transform.localScale;
-            scale.x = Mathf.Abs(scale.x);
-            transform.localScale = scale;
+            // A: left
+            if (Input.GetKey(KeyCode.A))
+            {
+                moveDirection = -1f;
+                transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
+            }
+            // D: right
+            else if (Input.GetKey(KeyCode.D))
+            {
+                moveDirection = 1f;
+                transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+            }
+            // W: jump
+            if (IsGrounded() && Input.GetKeyDown(KeyCode.W))
+            {
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }
+            // S: pick up bones
+            //         if (Input.GetKeyDown(KeyCode.S))
+            //         {
+            //             // animator.Play("PickUpBone"); // Animation
+            //             blood += 0.15f;
+            //         }
+            if (!IsGrounded())
+            {
+                animator.Play("jump");
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                animator.Play("walk");
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                animator.Play("walk");
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                animator.Play("static");
+            }
+            else
+            {
+                animator.Play("static");
+            }
+            //appearance
+            if (Input.GetKey(KeyCode.A))
+            {
+                Vector3 scale = transform.localScale;
+                scale.x = -Mathf.Abs(scale.x);
+                transform.localScale = scale;
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                Vector3 scale = transform.localScale;
+                scale.x = Mathf.Abs(scale.x);
+                transform.localScale = scale;
+            }
         }
     }
 
@@ -197,8 +198,8 @@ public class DogController : MonoBehaviour
     {
         if (isDead) return; 
         isDead = true;
-        // animator.Play("Die"); // Animation
-        Invoke("Respawn", 0f); // Wait for 2 seconds
+        animator.Play("die"); // Animation
+        Invoke("Respawn", 2f); // Wait for 2 seconds
     }
 
     public void Win()
