@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class exit : MonoBehaviour
+public class exit_nature1 : MonoBehaviour
 {
 
     public string targetScene; // 目标场景名（需在Build Settings中添加）
@@ -14,7 +14,7 @@ public class exit : MonoBehaviour
         if (other.CompareTag(collisionTag))
         {
             Debug.Log("qqqq");
-            SceneManager.LoadScene("nature_1");
+            SceneManager.LoadScene("menu");
         }
     }
 }

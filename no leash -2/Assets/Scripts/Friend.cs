@@ -34,13 +34,7 @@ public class Friend : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     // IsTrigger = false
     {
-        if (collision.gameObject == dog)
-        {
-            // 变成dog的子物体
-            transform.SetParent(dog.transform);
-            following = true;
-            transform.localPosition = new Vector3(1f, 0f, 0f);  // Set local position
-        }
+        if (collision.gameObject == dog) Destroy(gameObject);
     }
 
     void Patrol()
