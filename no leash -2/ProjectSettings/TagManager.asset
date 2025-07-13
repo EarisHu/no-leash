@@ -13,6 +13,10 @@ TagManager:
   - static_platform
   - dog
   - meat
+  - Day
+  - Night
+  - map1
+  - map2
   layers:
   - Default
   - TransparentFX
@@ -52,6 +56,9 @@ TagManager:
     locked: 0
   - name: New Layer 1
     uniqueID: 3095446337
+  - name: black
+    uniqueID: 4261414005
+    locked: 0
   - name: blackground
     uniqueID: 688457825
     locked: 0

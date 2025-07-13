@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:no leash -2/Assets/map/floor/spritesheet-tiles-default_1.asset.meta
 guid: 9c84f0175c465a44aa8b2ded2eca4552
+========
+guid: fd7da61776d8d6741b4fa93901af7cc5
+>>>>>>>> city2:no leash -2/Assets/things/Backgrounds/backgroundDesert.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

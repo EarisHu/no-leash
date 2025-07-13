@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:no leash -2/Assets/Resources/badmeat.prefab.meta
 guid: fd2b281698108cb45bc8fb6503799eee
+========
+guid: b812f81b5cd43fe428712cc20289e69e
+>>>>>>>> city2:no leash -2/Assets/Resources/elec.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

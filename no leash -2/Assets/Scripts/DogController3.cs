@@ -29,15 +29,19 @@ public class DogController : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.y <= -camera.orthographicSize)
+        if (!isDead && transform.position.y <= -150)
+        {
+            Debug.Log("out");
             Die();
+        }
         HandleInput();
-        BloodChange();
-        //if (transform.position.x >= 750)
-        //{
-        //    Debug.Log("oi");
-        //    SceneManager.LoadScene("nature");
-        //}
+        // BloodChange();
+        // if (transform.position.x >= 750)
+        // {
+        //     Debug.Log("oi");
+        //     SceneManager.LoadScene("city2");
+        // }
+
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -155,6 +159,8 @@ public class DogController : MonoBehaviour
 
     public void Die()
     {
+        if (isDead) return; 
+        isDead = true;
         // animator.Play("Die"); // Animation
         Invoke("Respawn", 0f); // Wait for 2 seconds
     }
