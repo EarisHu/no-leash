@@ -4,7 +4,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DogController : MonoBehaviour
+public class DogController3 : MonoBehaviour
 {
     private Animator animator;
     private Rigidbody2D rb;
@@ -16,9 +16,11 @@ public class DogController : MonoBehaviour
     public LayerMask groundLayer;
     public bool isDead;
     public Vector2 way;
+    public bool ifwith;
 
     void Start()
     {
+        ifwith = false;
         way = Vector2.down;
         isDead = false;
         camera = Camera.main;
@@ -119,27 +121,52 @@ public class DogController : MonoBehaviour
             // animator.Play("PickUpBone"); // Animation
             blood += 0.15f;
         }
-
-        //appearance
-        if (!IsGrounded())
+        if (!ifwith)
         {
-            animator.Play("jump");
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            animator.Play("walk");
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            animator.Play("walk");
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            animator.Play("static");
+            //appearance
+            if (!IsGrounded())
+            {
+                animator.Play("jump");
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                animator.Play("walk");
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                animator.Play("walk");
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                animator.Play("static");
+            }
+            else
+            {
+                animator.Play("static");
+            }
         }
         else
         {
-            animator.Play("static");
+            if (!IsGrounded())
+            {
+                animator.Play("jump_with_friend");
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                animator.Play("walk_with_friend");
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                animator.Play("walk_with_friend");
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                animator.Play("static_with_friend");
+            }
+            else
+            {
+                animator.Play("static_with_friend");
+            }
         }
 
         if (Input.GetKey(KeyCode.A))
@@ -195,7 +222,7 @@ public class DogController : MonoBehaviour
 
     public void Die()
     {
-        if (isDead) return; 
+        if (isDead) return;
         isDead = true;
         // animator.Play("Die"); // Animation
         Invoke("Respawn", 0f); // Wait for 2 seconds
