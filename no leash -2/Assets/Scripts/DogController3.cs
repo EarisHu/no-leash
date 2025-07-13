@@ -15,14 +15,16 @@ public class DogController : MonoBehaviour
     private float groundCheckDistance;
     public LayerMask groundLayer;
     public bool isDead;
+    public Vector2 way;
 
     void Start()
     {
+        way = Vector2.down;
         isDead = false;
         camera = Camera.main;
         moveSpeed = 30f;
         blood = 5f;
-        jumpForce = 75f;
+        jumpForce = 85f;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         BoxCollider2D box = GetComponent<BoxCollider2D>();
@@ -57,6 +59,15 @@ public class DogController : MonoBehaviour
             jumpForce = 110f;
             moveSpeed = 55f;
         }
+        else if (collision.gameObject.name == "enemy1")
+            Die();
+        else if (collision.gameObject.name == "meat1")
+        {
+            jumpForce = 140f;
+            moveSpeed = 65f;
+        }
+        else if (collision.gameObject.tag == "Badmeat")
+            Die();
     }
 
     void OnCollisionExit2D(Collision2D collision)
@@ -65,17 +76,21 @@ public class DogController : MonoBehaviour
         {
             transform.parent = null;
         }
+        //else if (collision.gameObject.name == "enemy1")
+        //    Die();
+        //else if (collision.gameObject.name == "meat1")
+        //{
+        //    jumpForce = 140f;
+        //    moveSpeed = 65f;
+        //}
+        //else if (collision.gameObject.tag == "Badmeat")
+        //    Die();
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "enemy1")
+        if (other.gameObject.tag == "Badmeat")
             Die();
-        else if (other.gameObject.name == "meat1")
-        {
-            jumpForce = 140f;
-            moveSpeed = 65f;
-        }
     }
 
     void HandleInput()
@@ -145,19 +160,31 @@ public class DogController : MonoBehaviour
     bool IsGrounded()
     {
         Vector2 origin = transform.position;
-        float width = 7.5f; 
+        float width = 7.5f;
 
         Vector2 leftOrigin = origin + Vector2.left * width;
         Vector2 rightOrigin = origin + Vector2.right * width;
 
-        RaycastHit2D leftHit = Physics2D.Raycast(leftOrigin, Vector2.down, groundCheckDistance, groundLayer);
-        RaycastHit2D rightHit = Physics2D.Raycast(rightOrigin, Vector2.down, groundCheckDistance, groundLayer);
-        RaycastHit2D centerHit = Physics2D.Raycast(origin, Vector2.down, groundCheckDistance, groundLayer);
+        RaycastHit2D leftHit = Physics2D.Raycast(leftOrigin, way, groundCheckDistance, groundLayer);
+        RaycastHit2D rightHit = Physics2D.Raycast(rightOrigin, way, groundCheckDistance, groundLayer);
+        RaycastHit2D centerHit = Physics2D.Raycast(origin, way, groundCheckDistance, groundLayer);
 
         Debug.DrawRay(leftOrigin, Vector2.down * groundCheckDistance, leftHit.collider ? Color.green : Color.red);
         Debug.DrawRay(rightOrigin, Vector2.down * groundCheckDistance, rightHit.collider ? Color.green : Color.red);
 
         return leftHit.collider != null || rightHit.collider != null || centerHit.collider != null;
+    }
+
+    public void day_switch()
+    {
+        way = Vector2.up;
+        jumpForce = 0 - jumpForce;
+    }
+
+    public void night_switch()
+    {
+        way = Vector2.down;
+        jumpForce = 0 - jumpForce;
     }
 
     void BloodChange()
