@@ -69,7 +69,7 @@ public class DogController3 : MonoBehaviour
             jumpForce = 110f;
             moveSpeed = 55f;
         }
-        else if (collision.gameObject.name == "enemy1")
+        else if (collision.gameObject.tag == "enemy")
             Die();
         else if (collision.gameObject.name == "meat1")
         {
