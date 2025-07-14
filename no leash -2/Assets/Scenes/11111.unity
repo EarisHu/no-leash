@@ -6879,7 +6879,11 @@ Transform:
   m_GameObject: {fileID: 1559608673}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream:no leash -2/Assets/Scenes/11111.unity
   m_LocalPosition: {x: 454.5, y: -73.8, z: 1.1361929}
+=======
+  m_LocalPosition: {x: -153.7, y: -22.7, z: 1.1361929}
+>>>>>>> Stashed changes:no leash -2/Assets/Scenes/city.unity
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
