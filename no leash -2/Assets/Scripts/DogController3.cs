@@ -24,9 +24,9 @@ public class DogController3 : MonoBehaviour
         way = Vector2.down;
         isDead = false;
         camera = Camera.main;
-        moveSpeed = 30f;
+        moveSpeed = 50f;
         blood = 5f;
-        jumpForce = 85f;
+        jumpForce = 90f;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         BoxCollider2D box = GetComponent<BoxCollider2D>();
