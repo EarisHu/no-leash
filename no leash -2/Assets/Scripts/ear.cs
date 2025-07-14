@@ -13,7 +13,7 @@ public class BorderObjectController : MonoBehaviour
 
     public bool useUI = false;
     public bool useScreenSpaceClamp = true;
-    public float screenCircleRadiusPixels = 200f;
+    public float screenCircleRadiusPixels = 100f;
 
     private SpriteRenderer spriteRenderer;
     private Image uiImage;
@@ -23,6 +23,9 @@ public class BorderObjectController : MonoBehaviour
 
     void Start()
     {
+        useUI = false;
+        useScreenSpaceClamp = true;
+        screenCircleRadiusPixels = 100f;
         if (useUI)
         {
             uiImage = GetComponent<Image>();
