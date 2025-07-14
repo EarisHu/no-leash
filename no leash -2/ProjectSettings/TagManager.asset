@@ -17,6 +17,7 @@ TagManager:
   - Night
   - map1
   - map2
+  - enemy
   layers:
   - Default
   - TransparentFX
