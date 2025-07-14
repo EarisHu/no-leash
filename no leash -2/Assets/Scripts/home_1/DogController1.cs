@@ -27,14 +27,19 @@ public class DogController1 : MonoBehaviour
         // jumpForce = 50f;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        rb.bodyType = RigidbodyType2D.Dynamic;
         BoxCollider2D box = GetComponent<BoxCollider2D>();
         groundCheckDistance = box.size.y * 0.5f * Mathf.Abs(transform.localScale.y) + 0.05f;
     }
 
     void Update()
     {
-        if (transform.position.y < (camera.transform.position.y - camera.orthographicSize))
+        if (transform.position.y < (camera.transform.position.y - camera.orthographicSize + 2 * transform.localScale.y))
+        {
+            rb.bodyType = RigidbodyType2D.Static;
+            Debug.Log("已切换为Static模式");
             Die();
+        }
         HandleInput();
         BloodChange();
     }
@@ -47,8 +52,8 @@ public class DogController1 : MonoBehaviour
         // }
         if (other.gameObject.name == "meat")
         {
-            jumpForce = 140f;
-            moveSpeed = 65f;
+            jumpForce = 110f;
+            moveSpeed = 60f;
         }
         if (other.gameObject.CompareTag("Badmeat"))
         {
