@@ -41,14 +41,20 @@ public class DogController3 : MonoBehaviour
             Die();
         }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         HandleInput();
 =======
+=======
+>>>>>>> Stashed changes
         // pause p = FindObjectOfType<pause>();
         // if (!p.isPaused)
         // { 
         //     HandleInput();
         // }
         
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         // BloodChange();
         // if (transform.position.x >= 750)
