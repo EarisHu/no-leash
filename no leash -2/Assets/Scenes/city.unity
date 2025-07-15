@@ -1895,6 +1895,7 @@ MonoBehaviour:
   m_Flags: 3
   m_ColliderType: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 --- !u!1 &986885384
 GameObject:
@@ -2005,6 +2006,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!213 &1006961858
 Sprite:
