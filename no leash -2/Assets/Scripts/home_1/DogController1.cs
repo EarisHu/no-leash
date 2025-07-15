@@ -146,7 +146,7 @@ public class DogController1 : MonoBehaviour
     bool IsGrounded()
     {
         Vector2 origin = transform.position;
-        float width = 5f;
+        float width = 7.5f;
 
         Vector2 leftOrigin = origin + Vector2.left * width;
         Vector2 rightOrigin = origin + Vector2.right * width;

@@ -1,10 +1,10 @@
-﻿// Open the trash bin? 
+// Open the trash bin? 
 // Animation? 
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DogController3 : MonoBehaviour
+public class Dog_nature2 : MonoBehaviour
 {
     private Animator animator;
     private Rigidbody2D rb;
@@ -35,17 +35,12 @@ public class DogController3 : MonoBehaviour
 
     void Update()
     {
-        if (!isDead && (transform.position.y <= -150 || transform.position.y >= 150))
+        if (!isDead && (transform.position.y <= -150 || transform.position.y >= 300))
         {
             Debug.Log("out");
             Die();
         }
-        // pause p = FindObjectOfType<pause>();
-        // if (!p.isPaused)
-        // { 
-        //     HandleInput();
-        // }
-        
+        HandleInput();
         // BloodChange();
         // if (transform.position.x >= 750)
         // {

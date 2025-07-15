@@ -7,13 +7,13 @@ public class BorderObjectController : MonoBehaviour
     public Transform targetB;
     public Camera mainCamera;
 
-    public float showDistance;
+    public float showDistance = 5f;
     public float moveSmoothTime = 0.2f;
     public float fadeSpeed = 5f;
 
     public bool useUI = false;
     public bool useScreenSpaceClamp = true;
-    public float screenCircleRadiusPixels;
+    public float screenCircleRadiusPixels = 100f;
 
     private SpriteRenderer spriteRenderer;
     private Image uiImage;
