@@ -35,9 +35,11 @@ public class DogController3 : MonoBehaviour
 
     void Update()
     {
-        if (!isDead && (transform.position.y <= -150 || transform.position.y >= 150))
+        if (!isDead && (transform.position.y < (camera.transform.position.y - camera.orthographicSize + 2 * transform.localScale.y) 
+            || transform.position.y > (camera.transform.position.y + camera.orthographicSize - 2 * transform.localScale.y)))
         {
-            Debug.Log("out");
+            rb.bodyType = RigidbodyType2D.Static;
+            Debug.Log("已切换为Static模式");
             Die();
         }
         pause p = FindObjectOfType<pause>();
@@ -125,7 +127,7 @@ public class DogController3 : MonoBehaviour
                 transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
             }
             // W: jump
-            if (IsGrounded() && Input.GetKeyDown(KeyCode.W))
+            if (IsGrounded() && (Input.GetKeyDown(KeyCode.W)|| Input.GetKeyDown(KeyCode.Space)))
             {
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             }

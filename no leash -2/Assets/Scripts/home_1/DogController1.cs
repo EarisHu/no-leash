@@ -88,7 +88,7 @@ public class DogController1 : MonoBehaviour
                 transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
             }
             // W: jump
-            if (IsGrounded() && Input.GetKeyDown(KeyCode.W))
+            if (IsGrounded() && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)))
             {
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             }
