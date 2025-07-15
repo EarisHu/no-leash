@@ -18,6 +18,7 @@ TagManager:
   - map1
   - map2
   - enemy
+  - car
   layers:
   - Default
   - TransparentFX
