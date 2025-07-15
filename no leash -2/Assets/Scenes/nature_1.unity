@@ -204,7 +204,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1172.689, y: 104.95655, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -224,7 +224,7 @@ MonoBehaviour:
   targetA: {fileID: 1243516189}
   targetB: {fileID: 1142660575}
   mainCamera: {fileID: 1657743889}
-  showDistance: 500
+  showDistance: 250
   moveSmoothTime: 0
   fadeSpeed: 2
   useUI: 0
@@ -284,7 +284,7 @@ Transform:
   m_GameObject: {fileID: 188719611}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.80885774, y: 7.6803055, z: 0.09059977}
+  m_LocalPosition: {x: 0.53, y: 6.12, z: 0.09059977}
   m_LocalScale: {x: 3.5151296, y: 3.5087562, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -331,7 +331,7 @@ SpriteRenderer:
   m_SortingLayerID: -1935623741
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3e6e784788a9bdd40aa8ce4fcefb7fe0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c393de937d7742345b5dd01ccde27f44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -351,9 +351,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 188719611}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a54628a99fa245448cf0fc14281f499, type: 3}
+  m_Script: {fileID: 11500000, guid: bf9447ea3eda2e44f9ba73b3e780734a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetObject: {fileID: 845983705}
+  showDistance: 250
+  followParent: {fileID: 1243516189}
 --- !u!1 &257857917
 GameObject:
   m_ObjectHideFlags: 0
@@ -2529,7 +2532,7 @@ SpriteRenderer:
   m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6eaf2ed3bd51a7841aefb3cc3f8aed66, type: 3}
-  m_Color: {r: 0.87169814, g: 0.68341124, b: 0.22203623, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2671,7 +2674,11 @@ Transform:
   m_GameObject: {fileID: 1243516187}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 534.9, y: 89.4, z: -0.09059977}
+=======
+  m_LocalPosition: {x: 867.8, y: 180.8, z: -0.09059977}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
