@@ -35,11 +35,10 @@ public class Dog_nature2 : MonoBehaviour
 
     void Update()
     {
-        if (!isDead && (transform.position.y < (camera.transform.position.y - camera.orthographicSize + 2 * transform.localScale.y)
-            || transform.position.y > (camera.transform.position.y + camera.orthographicSize - 2 * transform.localScale.y)))
+        if (!isDead && (transform.position.y < (camera.transform.position.y - camera.orthographicSize + 2 * transform.localScale.y)))
         {
             rb.bodyType = RigidbodyType2D.Static;
-            Debug.Log("已切换为Static模式");
+            Debug.Log("锟斤拷锟叫伙拷为Static模式");
             Die();
         }
         pause p = FindObjectOfType<pause>();
