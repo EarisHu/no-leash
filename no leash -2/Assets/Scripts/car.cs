@@ -9,6 +9,7 @@ public class car : MonoBehaviour
     {
         dog = GameObject.FindWithTag("Dog");
     }
+
     
     void OnTriggerEnter2D(Collider2D other)
     {

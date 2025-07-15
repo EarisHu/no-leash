@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7365253043801492963}
   - component: {fileID: 3238047586311589712}
+  - component: {fileID: -5068853971518767859}
   - component: {fileID: 1229249609321166419}
-  - component: {fileID: 658579628161859296}
-  - component: {fileID: -2048277193269667025}
+  - component: {fileID: -3214548100664053706}
   m_Layer: 0
   m_Name: car
-  m_TagString: car
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,6 +87,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-5068853971518767859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5824312782092191946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc85b6daddc671744990d3588c8bd779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dog: {fileID: 0}
 --- !u!61 &1229249609321166419
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -132,7 +145,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.33, y: 0.15}
   m_EdgeRadius: 0
---- !u!50 &658579628161859296
+--- !u!50 &-3214548100664053706
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -159,17 +172,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-2048277193269667025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5824312782092191946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc85b6daddc671744990d3588c8bd779, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dog: {fileID: 0}
-  speed: 50
