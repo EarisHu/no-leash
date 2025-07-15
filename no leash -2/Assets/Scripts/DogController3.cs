@@ -40,7 +40,16 @@ public class DogController3 : MonoBehaviour
             Debug.Log("out");
             Die();
         }
+<<<<<<< Updated upstream
         HandleInput();
+=======
+        // pause p = FindObjectOfType<pause>();
+        // if (!p.isPaused)
+        // { 
+        //     HandleInput();
+        // }
+        
+>>>>>>> Stashed changes
         // BloodChange();
         // if (transform.position.x >= 750)
         // {
