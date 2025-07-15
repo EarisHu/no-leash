@@ -533,14 +533,14 @@ RectTransform:
   m_GameObject: {fileID: 142138048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1583964677}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.1, y: -24.3}
+  m_AnchoredPosition: {x: -4.2, y: -95.7}
   m_SizeDelta: {x: 50, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &142138050
@@ -836,6 +836,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741827
+  - first: {x: -363, y: 2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -127, y: 2, z: 0}
     second:
       serializedVersion: 2
@@ -904,10 +914,10 @@ Tilemap:
     m_Data: {fileID: 352100807}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 2a6ed35c291a8124687354b3687983e6, type: 2}
-  - m_RefCount: 2
+  - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 2cfc13f1a4d7fc14685f7a7a86729c0e, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 2
+  - m_RefCount: 3
     m_Data: {fileID: 21300000, guid: 7d5b814d0f82b2f4597b7f171641c4c1, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 21300000, guid: 0963c85e8e3a9324e975dd6a0e64aea9, type: 3}
@@ -916,7 +926,7 @@ Tilemap:
   - m_RefCount: 2
     m_Data: {fileID: 260423163}
   m_TileMatrixArray:
-  - m_RefCount: 12
+  - m_RefCount: 13
     m_Data:
       e00: 1
       e01: 0
@@ -935,7 +945,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 6
+  - m_RefCount: 7
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 4
     m_Data: {r: 0.9234537, g: 0.5753543, b: 0.68888503, a: 1}
@@ -944,8 +954,8 @@ Tilemap:
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -127, y: 0, z: 0}
-  m_Size: {x: 1291, y: 3, z: 1}
+  m_Origin: {x: -363, y: 0, z: 0}
+  m_Size: {x: 1527, y: 3, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -1504,14 +1514,14 @@ RectTransform:
   m_GameObject: {fileID: 450345280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1583964677}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.8, y: -4.5}
+  m_AnchoredPosition: {x: 5.7, y: -19}
   m_SizeDelta: {x: 50, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &450345282
@@ -2837,14 +2847,14 @@ RectTransform:
   m_GameObject: {fileID: 905937557}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1583964677}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.6, y: 14.7}
+  m_AnchoredPosition: {x: 3.1, y: 53.5}
   m_SizeDelta: {x: 50, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &905937559
@@ -3516,7 +3526,7 @@ Transform:
   m_GameObject: {fileID: 1331771434}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -110.7, y: -22.2, z: -10}
+  m_LocalPosition: {x: -84, y: -21, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3536,7 +3546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 654986885}
   smoothSpeed: 0.125
-  minPosition: {x: -110.7, y: -22.2}
+  minPosition: {x: -80, y: -22.2}
   maxPosition: {x: 820, y: 25}
 --- !u!213 &1347855094
 Sprite:
