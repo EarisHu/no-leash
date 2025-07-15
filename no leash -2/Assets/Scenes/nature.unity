@@ -6585,7 +6585,7 @@ Transform:
   m_GameObject: {fileID: 742035890}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -164.07, y: 103.82, z: 0}
+  m_LocalPosition: {x: -195, y: 100, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6741,7 +6741,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -869, y: 590}
+  m_AnchoredPosition: {x: 0, y: 254}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &751793176
@@ -6758,8 +6758,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progressSlider: {fileID: 0}
   targetObject: {fileID: 742035892}
-  leftBoundary: -120
-  rightBoundary: 1090
+  leftBoundary: -190
+  rightBoundary: 760
   useSmoothTransition: 1
   smoothSpeed: 3
 --- !u!114 &751793177
@@ -8257,8 +8257,8 @@ Transform:
   m_GameObject: {fileID: 1333301157}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 726.9, y: 0, z: 0}
-  m_LocalScale: {x: 42.742752, y: 32.865692, z: 1}
+  m_LocalPosition: {x: 726, y: 0, z: 0}
+  m_LocalScale: {x: 42.742752, y: 33.07584, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 79402738}
   - component: {fileID: 79402737}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: instruction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -444,10 +444,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'The button here can change the direction of gravity!
+  m_text: 'Press E to change the terrain!
 
-    Press the space
-    bar to change the terrain!'
+    The button here can change the direction
+    of gravity!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -577,7 +577,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50, y: -83}
+  m_AnchoredPosition: {x: -46.8, y: -85.8}
   m_SizeDelta: {x: 100, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &253325239
@@ -1899,7 +1899,7 @@ Transform:
   m_GameObject: {fileID: 654986879}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 640.5, y: -104.6, z: 1.1361929}
+  m_LocalPosition: {x: -162, y: -47, z: 1.1361929}
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3021,7 +3021,7 @@ Transform:
   m_GameObject: {fileID: 1095540217}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 8, z: -1.1361929}
+  m_LocalPosition: {x: 0.13, y: 6.66, z: -1.1361929}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3068,7 +3068,7 @@ SpriteRenderer:
   m_SortingLayerID: -1935623741
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 94799a4098ccff34087e18dc0f9f6587, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c393de937d7742345b5dd01ccde27f44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3167,7 +3167,7 @@ RectTransform:
   m_GameObject: {fileID: 1234192991}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 403406869}
@@ -3177,7 +3177,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -869, y: 590}
+  m_AnchoredPosition: {x: 0, y: 241}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1234192993
@@ -3194,8 +3194,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progressSlider: {fileID: 0}
   targetObject: {fileID: 654986885}
-  leftBoundary: -120
-  rightBoundary: 1090
+  leftBoundary: -170
+  rightBoundary: 720
   useSmoothTransition: 1
   smoothSpeed: 3
 --- !u!114 &1234192994
