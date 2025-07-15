@@ -279,7 +279,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1172.689, y: 104.95655, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -304,7 +304,7 @@ MonoBehaviour:
   fadeSpeed: 2
   useUI: 0
   useScreenSpaceClamp: 1
-  screenCircleRadiusPixels: 300
+  screenCircleRadiusPixels: 120
 --- !u!50 &100600191
 Rigidbody2D:
   serializedVersion: 4
@@ -2243,7 +2243,7 @@ MonoBehaviour:
   fadeSpeed: 2
   useUI: 0
   useScreenSpaceClamp: 1
-  screenCircleRadiusPixels: 400
+  screenCircleRadiusPixels: 120
 --- !u!212 &528839381
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3693,7 +3693,7 @@ SpriteRenderer:
   m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6eaf2ed3bd51a7841aefb3cc3f8aed66, type: 3}
-  m_Color: {r: 0.87169814, g: 0.68341124, b: 0.22203623, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3835,7 +3835,7 @@ Transform:
   m_GameObject: {fileID: 1243516187}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 537, y: 83, z: -0.09059977}
+  m_LocalPosition: {x: 540, y: 90, z: -0.09059977}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5136,12 +5136,12 @@ MonoBehaviour:
   targetA: {fileID: 1243516189}
   targetB: {fileID: 1468603277}
   mainCamera: {fileID: 1657743889}
-  showDistance: 50
+  showDistance: 100
   moveSmoothTime: 0
   fadeSpeed: 2
   useUI: 0
   useScreenSpaceClamp: 1
-  screenCircleRadiusPixels: 400
+  screenCircleRadiusPixels: 120
 --- !u!212 &1775985700
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5621,7 +5621,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9, y: 61}
+  m_AnchoredPosition: {x: 9, y: 266}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2057741436
@@ -5638,8 +5638,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progressSlider: {fileID: 0}
   targetObject: {fileID: 1243516189}
-  leftBoundary: -120
-  rightBoundary: 1090
+  leftBoundary: 537
+  rightBoundary: 1300
   useSmoothTransition: 1
   smoothSpeed: 3
 --- !u!114 &2057741437
