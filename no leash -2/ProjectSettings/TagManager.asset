@@ -3,44 +3,34 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< Updated upstream
-  tags: []
-=======
   tags:
-  - dog
-  - Badmeat
   - Chocolate
   - elec
-  - MovingPlatform
-  - Dog
-  - static_platform
-  - dog
-  - meat
-  - Day
-  - Night
-  - map1
-  - map2
-  - enemy
+  - Badmeat
+  - damage1
   - light2
   - ghost
-  - light1
-  - light3
   - enemy_4
-  - level5_dog
-  - damage1
-  - damage3
+  - bone4
+  - bone3
+  - Dog
+  - light3
+  - level4_door
+  - light1
+  - count
   - bone1
   - bone2
-  - bone3
-  - bone4
-  - count
-  - level4_door
->>>>>>> Stashed changes
+  - damage3
+  - enemy
+  - MovingPlatform
+  - static_platform
+  - meat
+  - dog
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 
@@ -72,4 +62,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: bg1
+    uniqueID: 2802483489
+    locked: 0
+  - name: bg2
+    uniqueID: 329046257
+    locked: 0
+  - name: platform
+    uniqueID: 3178047489
+    locked: 0
+  - name: meat
+    uniqueID: 1441417233
+    locked: 0
+  - name: dog
+    uniqueID: 784625405
+    locked: 0
+  - name: night
+    uniqueID: 4210546287
     locked: 0
