@@ -135,9 +135,13 @@ public class DogController3 : MonoBehaviour
                 transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
             }
             // W: jump
-            if (IsGrounded() && (Input.GetKeyDown(KeyCode.W)|| Input.GetKeyDown(KeyCode.Space)))
+            if (IsGrounded() && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)))
             {
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                // 直接赋予垂直速度（忽略当前质量）
+                // float jumpVelocity = jumpForce;
+                // rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
+                Debug.Log("oi");
             }
             // S: pick up bones
             if (Input.GetKeyDown(KeyCode.S))
@@ -230,13 +234,13 @@ public class DogController3 : MonoBehaviour
     public void day_switch()
     {
         way = Vector2.up;
-        jumpForce = 0 - jumpForce;
+        // jumpForce = 0 - jumpForce;
     }
 
     public void night_switch()
     {
         way = Vector2.down;
-        jumpForce = 0 - jumpForce;
+        // jumpForce = 0 - jumpForce;
     }
 
     void BloodChange()
