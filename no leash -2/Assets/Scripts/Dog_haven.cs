@@ -20,6 +20,7 @@ public class Dog_haven : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("!!!!");
         ifwith = false;
         way = Vector2.down;
         isDead = false;
@@ -35,14 +36,14 @@ public class Dog_haven : MonoBehaviour
 
     void Update()
     {
-        if (!isDead && (transform.position.y < (camera.transform.position.y - camera.orthographicSize + 2 * transform.localScale.y)))
+        if (!isDead && (transform.position.y < -140))
         // || transform.position.y > (camera.transform.position.y + camera.orthographicSize - 2 * transform.localScale.y)
         {
             rb.bodyType = RigidbodyType2D.Static;
             Debug.Log("已切换为Static模式");
             Die();
         }
-        if (!isDead && (transform.position.y > (camera.transform.position.y + 2 * camera.orthographicSize)))
+        if (!isDead && (transform.position.y > 397))
         {
             if (isDead) return;
             isDead = true;
@@ -60,7 +61,6 @@ public class Dog_haven : MonoBehaviour
         //     Debug.Log("oi");
         //     SceneManager.LoadScene("city2");
         // }
-
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -80,8 +80,8 @@ public class Dog_haven : MonoBehaviour
         if (collision.gameObject.tag == "meat")
         {
             Debug.Log("oi");
-            jumpForce += 20f;
-            // moveSpeed = 60f;
+            jumpForce += 10f;
+            moveSpeed = 60f;
         }
         if (collision.gameObject.tag == "enemy")
             Die();
@@ -138,6 +138,10 @@ public class Dog_haven : MonoBehaviour
             if (IsGrounded() && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)))
             {
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                // 直接赋予垂直速度（忽略当前质量）
+                // float jumpVelocity = jumpForce;
+                // rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
+                Debug.Log("oi");
             }
             // S: pick up bones
             if (Input.GetKeyDown(KeyCode.S))
@@ -192,7 +196,6 @@ public class Dog_haven : MonoBehaviour
                     animator.Play("static_with_friend");
                 }
             }
-
             if (Input.GetKey(KeyCode.A))
             {
                 Vector3 scale = transform.localScale;
@@ -207,7 +210,6 @@ public class Dog_haven : MonoBehaviour
             }
         }
     }
-
 
     bool IsGrounded()
     {
@@ -230,13 +232,13 @@ public class Dog_haven : MonoBehaviour
     public void day_switch()
     {
         way = Vector2.up;
-        jumpForce = 0 - jumpForce;
+        // jumpForce = 0 - jumpForce;
     }
 
     public void night_switch()
     {
         way = Vector2.down;
-        jumpForce = 0 - jumpForce;
+        // jumpForce = 0 - jumpForce;
     }
 
     void BloodChange()
@@ -247,6 +249,7 @@ public class Dog_haven : MonoBehaviour
 
     public void Die()
     {
+        Debug.Log("???");
         if (isDead) return;
         isDead = true;
         animator.Play("die"); // Animation

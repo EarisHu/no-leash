@@ -36,19 +36,19 @@ public class DogController3 : MonoBehaviour
 
     void Update()
     {
-        if (!isDead && (transform.position.y < -140))
+        if (!isDead && (transform.position.y < (camera.transform.position.y - camera.orthographicSize + 2 * transform.localScale.y)))
         // || transform.position.y > (camera.transform.position.y + camera.orthographicSize - 2 * transform.localScale.y)
         {
             rb.bodyType = RigidbodyType2D.Static;
             Debug.Log("已切换为Static模式");
             Die();
         }
-        if (!isDead && (transform.position.y > 397))
+        if (!isDead && (transform.position.y > (camera.transform.position.y + 2 * camera.orthographicSize)))
         {
             if (isDead) return;
             isDead = true;
             // animator.Play("die"); // Animation
-            Invoke("Respawn", 0f); 
+            Invoke("Respawn", 0f);
         }
         pause p = FindObjectOfType<pause>();
         if (!p.isPaused)
