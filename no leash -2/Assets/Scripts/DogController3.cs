@@ -20,6 +20,7 @@ public class DogController3 : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("!!!!");
         ifwith = false;
         way = Vector2.down;
         isDead = false;
@@ -35,14 +36,14 @@ public class DogController3 : MonoBehaviour
 
     void Update()
     {
-        if (!isDead && (transform.position.y < (camera.transform.position.y - camera.orthographicSize + 2 * transform.localScale.y)))
+        if (!isDead && (transform.position.y < -140))
         // || transform.position.y > (camera.transform.position.y + camera.orthographicSize - 2 * transform.localScale.y)
         {
             rb.bodyType = RigidbodyType2D.Static;
             Debug.Log("已切换为Static模式");
             Die();
         }
-        if (!isDead && (transform.position.y > (camera.transform.position.y + 2 * camera.orthographicSize)))
+        if (!isDead && (transform.position.y > 397))
         {
             if (isDead) return;
             isDead = true;
@@ -60,7 +61,6 @@ public class DogController3 : MonoBehaviour
         //     Debug.Log("oi");
         //     SceneManager.LoadScene("city2");
         // }
-
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -196,7 +196,6 @@ public class DogController3 : MonoBehaviour
                     animator.Play("static_with_friend");
                 }
             }
-
             if (Input.GetKey(KeyCode.A))
             {
                 Vector3 scale = transform.localScale;
@@ -211,7 +210,6 @@ public class DogController3 : MonoBehaviour
             }
         }
     }
-
 
     bool IsGrounded()
     {
@@ -251,6 +249,7 @@ public class DogController3 : MonoBehaviour
 
     public void Die()
     {
+        Debug.Log("???");
         if (isDead) return;
         isDead = true;
         animator.Play("die"); // Animation
