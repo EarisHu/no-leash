@@ -61,8 +61,8 @@ public class led : MonoBehaviour
 
             if (dogX >= a && dogX <= b)
             {
-                GameObject car = Instantiate(carPrefab, new Vector2(645, -70), Quaternion.identity);
-                car.GetComponent<Rigidbody2D>().velocity = Vector2.left * 90f;
+                GameObject car = Instantiate(carPrefab, new Vector2(645, -65), Quaternion.identity);
+                car.GetComponent<Rigidbody2D>().velocity = Vector2.left * 100f;
                 Destroy(car, 1f);
                 carSpawned = true;
             }
