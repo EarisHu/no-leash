@@ -16,9 +16,28 @@ public class DogController1 : MonoBehaviour
     private float groundCheckDistance;
     public LayerMask groundLayer;
     public bool isDead;
+    public float duration;
+    private SpriteRenderer spriteRenderer;
+    private Color originalColor;
+
+    void DisableEffect()
+    {
+        // 效果解除逻辑
+        jumpForce = 90f;
+        moveSpeed = 50f;
+    }
+    void RevertColor()
+    {
+        spriteRenderer.color = originalColor;
+    }
 
     void Start()
     {
+        // 获取SpriteRenderer组件
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
+        //badmeat时间
+        duration = 5.0f;
         isDead = false;
         // spawnThreshold = 150f;
         camera = Camera.main;
@@ -57,8 +76,13 @@ public class DogController1 : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Badmeat"))
         {
-            jumpForce = 70f;
-            moveSpeed = 20f;
+            jumpForce = 50f;
+            moveSpeed = 10f;
+            // 也可以包含透明度（A值）
+            spriteRenderer.color = new Color(1f, 0f, 0f, 1f); // 半透明红色
+            Invoke("RevertColor", 0.2f);
+            // spriteRenderer.color = new Color(0.1f, 0.35f, 0.1f); // 带一点灰色的暗绿
+            Invoke("DisableEffect", duration);
         }
         if (other.gameObject.CompareTag("Chocolate"))
         {
