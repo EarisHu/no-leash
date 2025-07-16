@@ -19,7 +19,7 @@ public class daytonight : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.J))
         {
             in_world_day = !in_world_day;
             world_day.SetActive(in_world_day);
