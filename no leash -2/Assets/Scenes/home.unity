@@ -1185,12 +1185,14 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797887844}
-  m_Text: Press W or space bar to jump!
+  m_Text: 'Press W or space bar to jump!
+
+    Try pressing 1,2,3,4! '
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 0
-  m_Alignment: 0
+  m_Alignment: 1
   m_TabSize: 4
   m_FontSize: 0
   m_FontStyle: 0
