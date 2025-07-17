@@ -80,7 +80,7 @@ public class Dog_haven : MonoBehaviour
         if (collision.gameObject.tag == "meat")
         {
             Debug.Log("oi");
-            jumpForce += 10f;
+            jumpForce += 8f;
             moveSpeed = 60f;
         }
         if (collision.gameObject.tag == "enemy")
@@ -115,6 +115,10 @@ public class Dog_haven : MonoBehaviour
     {
         if (other.gameObject.tag == "Badmeat")
             Die();
+        if(other.gameObject.tag == "meat")
+        {
+            jumpForce += 8f;
+        }
     }
 
     void HandleInput()

@@ -23,6 +23,7 @@ public class plat2 : MonoBehaviour
         if (p.GetComponent<plat1>().over)
         {
             rb.isKinematic = false;
+            rb.gravityScale = 8f;
         }
     }
 

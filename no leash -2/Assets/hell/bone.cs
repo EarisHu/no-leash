@@ -14,29 +14,30 @@ public class bone : MonoBehaviour
         if (other.CompareTag("Dog"))
         {
             Countdown countScript = count.GetComponent<Countdown>();
-            if (gameObject.tag == "bone1")
-            {
-                countScript.currentTime += 7;
-                Destroy(gameObject);
-            }
-            else if (gameObject.tag == "bone2")
-            {
-                countScript.currentTime += 7;
-                Destroy(gameObject);
-            }
-            else if (gameObject.tag == "bone3")
-            {
-                countScript.currentTime += 7;
-                Destroy(gameObject);
-            }
-            else if (gameObject.tag == "bone4")
-            {
-                countScript.currentTime += 7;
-                Destroy(gameObject);
-            }
 
-            // countScript.currentTime += 6;
-            // Destroy(gameObject);
+            //if (gameObject.tag == "bone1")
+            //{
+            //    countScript.currentTime += 7;
+            //    Destroy(gameObject);
+            //}
+            //else if (gameObject.tag == "bone2")
+            //{
+            //    countScript.currentTime += 7;
+            //    Destroy(gameObject);
+            //}
+            //else if (gameObject.tag == "bone3")
+            //{
+            //    countScript.currentTime += 7;
+            //    Destroy(gameObject);
+            //}
+            //else if (gameObject.tag == "bone4")
+            //{
+            //    countScript.currentTime += 7;
+            //    Destroy(gameObject);
+            //}
+
+            countScript.currentTime += 7;
+            Destroy(gameObject);
         }
     }
 }
