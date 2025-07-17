@@ -8,8 +8,8 @@ public class PositionProgressBar : MonoBehaviour
     public Transform targetObject; // 要跟踪的目标物体（如玩家）
     
     [Header("地图边界")]
-    public float leftBoundary = -10f; // 地图左边界X坐标
-    public float rightBoundary = 10f; // 地图右边界X坐标
+    public float leftBoundary; // 地图左边界X坐标
+    public float rightBoundary; // 地图右边界X坐标
     
     [Header("平滑设置")]
     public bool useSmoothTransition = true; // 是否启用平滑过渡

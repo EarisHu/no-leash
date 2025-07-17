@@ -25,7 +25,7 @@ public class BorderObjectController : MonoBehaviour
     {
         useUI = false;
         useScreenSpaceClamp = true;
-        screenCircleRadiusPixels = 100f;
+        // screenCircleRadiusPixels = 100f;
         if (useUI)
         {
             uiImage = GetComponent<Image>();
