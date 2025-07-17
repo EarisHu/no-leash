@@ -14,7 +14,7 @@ public class level4_enemy : MonoBehaviour
     {
         if (ifgo)
         {
-            transform.Translate(Vector2.left * 70f * Time.deltaTime);
+            transform.Translate(Vector2.left * 75f * Time.deltaTime);
         }
     }
 
