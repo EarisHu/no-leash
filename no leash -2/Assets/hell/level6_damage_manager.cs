@@ -18,11 +18,11 @@ public class level6_damage_manager : MonoBehaviour
 
     void Update()
     {
-        if (dog.transform.position.y < -400 && dog.transform.position.y > -470 && dog.transform.position.x < 100) { }
+        if (dog.transform.position.y < -400 && dog.transform.position.y > -470 && dog.transform.position.x < 100)
         {
             damage1.SetActive(true);
         }
-        if (dog.transform.position.y < -400 && dog.transform.position.y > -470 && dog.transform.position.x < -36) { }
+        if (dog.transform.position.y < -400 && dog.transform.position.y > -470 && dog.transform.position.x < -36)
         {
             damage3.SetActive(true);
         }

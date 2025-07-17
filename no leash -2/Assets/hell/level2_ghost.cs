@@ -31,7 +31,7 @@ public class level2_ghost : MonoBehaviour
     {
         if (other.CompareTag("Dog"))
         {
-            DogController3 dogScript = other.GetComponent<DogController3>();
+            dog_hell dogScript = other.GetComponent<dog_hell>();
             dogScript.Die();  
         }
     }

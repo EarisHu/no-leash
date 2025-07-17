@@ -17,9 +17,14 @@ public class dog_hell : MonoBehaviour
     public Vector2 way;
     public bool ifwith;
     private bool level_5;
+    public GameObject count;
 
     void Start()
     {
+        count = GameObject.FindWithTag("count");
+        Countdown countdown = count.GetComponent<Countdown>();
+        countdown.countdownText.text = "";
+        count.SetActive(false);
         level_5 = false;
         ifwith = false;
         way = Vector2.down;
@@ -60,20 +65,22 @@ public class dog_hell : MonoBehaviour
         {
             level_5 = false;
         }
-        if (!isDead && (transform.position.y < (camera.transform.position.y - camera.orthographicSize + 2 * transform.localScale.y)))
-        // || transform.position.y > (camera.transform.position.y + camera.orthographicSize - 2 * transform.localScale.y)
-        {
-            rb.bodyType = RigidbodyType2D.Static;
-            Debug.Log("已切换为Static模式");
-            Die();
-        }
-        if (!isDead && (transform.position.y > (camera.transform.position.y + 2 * camera.orthographicSize)))
-        {
-            if (isDead) return;
-            isDead = true;
-            // animator.Play("die"); // Animation
-            Invoke("Respawn", 0f); 
-        }
+
+        // if (!isDead && (transform.position.y < (camera.transform.position.y - camera.orthographicSize + 2 * transform.localScale.y)))
+        // // || transform.position.y > (camera.transform.position.y + camera.orthographicSize - 2 * transform.localScale.y)
+        // {
+        //     rb.bodyType = RigidbodyType2D.Static;
+        //     Debug.Log("已切换为Static模式");
+        //     Die();
+        // }
+        // if (!isDead && (transform.position.y > (camera.transform.position.y + 2 * camera.orthographicSize)))
+        // {
+        //     if (isDead) return;
+        //     isDead = true;
+        //     // animator.Play("die"); // Animation
+        //     Invoke("Respawn", 0f); 
+        // }
+
         pause p = FindObjectOfType<pause>();
         if (!p.isPaused && !level_5)
         { 
@@ -91,6 +98,7 @@ public class dog_hell : MonoBehaviour
             pos.x = -50;
             pos.y = -640;
             transform.position = pos;
+            count.SetActive(true);
         }
     }
 
