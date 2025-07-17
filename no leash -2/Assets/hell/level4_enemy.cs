@@ -23,7 +23,7 @@ public class level4_enemy : MonoBehaviour
     {
         if (other.CompareTag("Dog"))
         {
-            DogController3 dogScript = other.GetComponent<DogController3>();
+            dog_hell dogScript = other.GetComponent<dog_hell>();
             dogScript.Die();  
         }
     }
