@@ -15,7 +15,11 @@ public class tree_rotate : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+<<<<<<< Updated upstream
         if (other.gameObject.name == "dog") 
+=======
+        if (d.transform.position.x >= 530)
+>>>>>>> Stashed changes
         {
             animator.SetTrigger("Hit");
             // treeCollider.isTrigger = false;
