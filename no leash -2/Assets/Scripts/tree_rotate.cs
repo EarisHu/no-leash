@@ -19,7 +19,7 @@ public class tree_rotate : MonoBehaviour
 
     void Update()
     {
-        if (d.transform.position.x >= 535)
+        if (d.transform.position.x >= 530)
         {
             animator.SetTrigger("Hit");
         }
