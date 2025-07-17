@@ -195,8 +195,8 @@ public class DogController1 : MonoBehaviour
         RaycastHit2D rightHit = Physics2D.Raycast(rightOrigin, Vector2.down, groundCheckDistance, groundLayer);
         RaycastHit2D centerHit = Physics2D.Raycast(origin, Vector2.down, groundCheckDistance, groundLayer);
 
-        Debug.DrawRay(leftOrigin, Vector2.down * groundCheckDistance, leftHit.collider ? Color.green : Color.red);
-        Debug.DrawRay(rightOrigin, Vector2.down * groundCheckDistance, rightHit.collider ? Color.green : Color.red);
+        //Debug.DrawRay(leftOrigin, Vector2.down * groundCheckDistance, leftHit.collider ? Color.green : Color.red);
+        //Debug.DrawRay(rightOrigin, Vector2.down * groundCheckDistance, rightHit.collider ? Color.green : Color.red);
 
         return leftHit.collider != null || rightHit.collider != null || centerHit.collider != null;
     }
