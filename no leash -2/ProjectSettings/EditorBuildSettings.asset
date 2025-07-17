@@ -6,6 +6,33 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Scene1.unity
+    path: Assets/Scenes/cover.unity
+    guid: 94964011bca4cfd458e4d6fa27e56865
+  - enabled: 1
+    path: Assets/Scenes/news.unity
+    guid: 78731fa8a142d0545a00f47bed73160e
+  - enabled: 1
+    path: Assets/Scenes/menu.unity
+    guid: 28ec61d6c3904fc42976b40cba4df49f
+  - enabled: 1
+    path: Assets/Scenes/home.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/city.unity
+    guid: 3c7f40139a561904aa99ac576a87442a
+  - enabled: 1
+    path: Assets/Scenes/city2.unity
+    guid: 13f634e5873cea745b95d48823d14442
+  - enabled: 1
+    path: Assets/Scenes/nature.unity
+    guid: 30d9c3b03c5fc8e43b41937bd1b1687a
+  - enabled: 1
+    path: Assets/Scenes/nature_1.unity
+    guid: 9cdeb72945bbfd74483170e57c7722df
+  - enabled: 1
+    path: Assets/Scenes/fake_hell.unity
+    guid: c37ecb43599317843b8f6fedf7b1ee1b
+  - enabled: 1
+    path: Assets/Scenes/fake_haven.unity
+    guid: 896151ea51f5da641b276856fe069564
   m_configObjects: {}
