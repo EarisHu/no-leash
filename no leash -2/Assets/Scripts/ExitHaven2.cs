@@ -11,7 +11,7 @@ public class ExitHaven2 : MonoBehaviour
         if (other.CompareTag("Dog"))
         {
             Debug.Log("qqqq");
-            SceneManager.LoadScene("menu");
+            SceneManager.LoadScene("fake_haven");
         }
     }
 }

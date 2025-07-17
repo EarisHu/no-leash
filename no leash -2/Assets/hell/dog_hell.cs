@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
 
 public class dog_hell : MonoBehaviour
 {
@@ -41,7 +41,7 @@ public class dog_hell : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.y < -275 && transform.position.y > -375 && transform.position.x>-140)
+        if (transform.position.y < -275 && transform.position.y > -375 && transform.position.x > -140)
         {
             level_5 = true;
             if (IsGrounded() && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && !isDead)
@@ -83,7 +83,7 @@ public class dog_hell : MonoBehaviour
 
         pause p = FindObjectOfType<pause>();
         if (!p.isPaused && !level_5)
-        { 
+        {
             HandleInput();
         }
         // BloodChange();
@@ -174,7 +174,7 @@ public class dog_hell : MonoBehaviour
                 transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
             }
             // W: jump
-            if (IsGrounded() && (Input.GetKeyDown(KeyCode.W)|| Input.GetKeyDown(KeyCode.Space)))
+            if (IsGrounded() && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)))
             {
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             }
@@ -202,6 +202,22 @@ public class dog_hell : MonoBehaviour
                 else if (Input.GetKey(KeyCode.S))
                 {
                     animator.Play("static");
+                }
+                else if (Input.GetKey(KeyCode.Keypad1) || Input.GetKey(KeyCode.Alpha1))
+                {
+                    animator.Play("dance1");
+                }
+                else if (Input.GetKey(KeyCode.Keypad2) || Input.GetKey(KeyCode.Alpha2))
+                {
+                    animator.Play("dance2");
+                }
+                else if (Input.GetKey(KeyCode.Keypad3) || Input.GetKey(KeyCode.Alpha3))
+                {
+                    animator.Play("dance3");
+                }
+                else if (Input.GetKey(KeyCode.Keypad4) || Input.GetKey(KeyCode.Alpha4))
+                {
+                    animator.Play("dance4");
                 }
                 else
                 {
@@ -288,6 +304,11 @@ public class dog_hell : MonoBehaviour
     {
         if (isDead) return;
         isDead = true;
+
+        int count = PlayerPrefs.GetInt("deathCount", 0);
+        PlayerPrefs.SetInt("deathCount", count + 1);  // 存入新值
+        PlayerPrefs.Save();
+
         animator.Play("die"); // Animation
         Invoke("Respawn", 2f); // Wait for 2 seconds
     }

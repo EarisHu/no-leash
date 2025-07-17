@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class Exit_hell : MonoBehaviour
+public class win_hell : MonoBehaviour
 {
 
     public string targetScene;
@@ -13,9 +13,7 @@ public class Exit_hell : MonoBehaviour
         if (other.CompareTag("Dog"))
         {
             Debug.Log("qqqq");
-            PlayerPrefs.DeleteKey("deathCount");
-            PlayerPrefs.Save();
-            SceneManager.LoadScene("fake_hell");
+            SceneManager.LoadScene("hell_win");
         }
     }
 }
