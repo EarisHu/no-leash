@@ -15,4 +15,9 @@ public class mainmenu : MonoBehaviour
         Debug.Log("Quit");
         Application.Quit();
     }
+
+    public void Reference()
+    {
+        SceneManager.LoadScene("reference");
+    }
 }
