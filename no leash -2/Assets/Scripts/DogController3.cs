@@ -20,6 +20,7 @@ public class DogController3 : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("!!!!");
         ifwith = false;
         way = Vector2.down;
         isDead = false;
@@ -35,6 +36,7 @@ public class DogController3 : MonoBehaviour
 
     void Update()
     {
+        //Debug.Log(transform.localScale);
         if (!isDead && (transform.position.y < (camera.transform.position.y - camera.orthographicSize + 2 * transform.localScale.y)))
         // || transform.position.y > (camera.transform.position.y + camera.orthographicSize - 2 * transform.localScale.y)
         {
@@ -47,7 +49,7 @@ public class DogController3 : MonoBehaviour
             if (isDead) return;
             isDead = true;
             // animator.Play("die"); // Animation
-            Invoke("Respawn", 0f); 
+            Invoke("Respawn", 0f);
         }
         pause p = FindObjectOfType<pause>();
         if (!p.isPaused)
@@ -60,7 +62,6 @@ public class DogController3 : MonoBehaviour
         //     Debug.Log("oi");
         //     SceneManager.LoadScene("city2");
         // }
-
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -75,7 +76,9 @@ public class DogController3 : MonoBehaviour
         }
         if (collision.gameObject.tag == "MovingPlatform")
         {
+            Vector3 originalScale = transform.localScale;
             transform.parent = collision.transform;
+            transform.localScale = originalScale;
         }
         if (collision.gameObject.tag == "meat")
         {
@@ -196,7 +199,6 @@ public class DogController3 : MonoBehaviour
                     animator.Play("static_with_friend");
                 }
             }
-
             if (Input.GetKey(KeyCode.A))
             {
                 Vector3 scale = transform.localScale;
@@ -211,7 +213,6 @@ public class DogController3 : MonoBehaviour
             }
         }
     }
-
 
     bool IsGrounded()
     {
@@ -251,6 +252,7 @@ public class DogController3 : MonoBehaviour
 
     public void Die()
     {
+        Debug.Log("???");
         if (isDead) return;
         isDead = true;
         animator.Play("die"); // Animation

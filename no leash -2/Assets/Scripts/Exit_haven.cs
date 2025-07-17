@@ -6,14 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class Exit_haven : MonoBehaviour
 {
-
     public string targetScene;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Dog"))
         {
             Debug.Log("qqqq");
-            SceneManager.LoadScene("fake_haven");
+            SceneManager.LoadScene("haven");
         }
     }
 }

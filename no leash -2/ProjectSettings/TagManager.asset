@@ -4,28 +4,36 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - dog
-  - Badmeat
   - Chocolate
   - elec
-  - MovingPlatform
+  - Badmeat
+  - damage1
+  - light2
+  - ghost
+  - enemy_4
+  - bone4
+  - bone3
   - Dog
-  - static_platform
-  - dog
-  - meat
-  - Day
-  - Night
-  - map1
-  - map2
+  - light3
+  - level4_door
+  - light1
+  - count
+  - bone1
+  - bone2
+  - damage3
   - enemy
+  - MovingPlatform
+  - static_platform
+  - meat
+  - dog
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - Ground
+  - 
   - 
   - 
   - 
@@ -55,33 +63,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: New Layer 1
-    uniqueID: 3095446337
+  - name: bg1
+    uniqueID: 2802483489
     locked: 0
-  - name: black
-    uniqueID: 4261414005
-    locked: 0
-  - name: blackground
-    uniqueID: 688457825
+  - name: bg2
+    uniqueID: 329046257
     locked: 0
   - name: platform
-    uniqueID: 1851429403
-    locked: 0
-  - name: fog
-    uniqueID: 3408241441
-    locked: 0
-  - name: front
-    uniqueID: 2359343555
+    uniqueID: 3178047489
     locked: 0
   - name: meat
-    uniqueID: 4261414005
+    uniqueID: 1441417233
+    locked: 0
+  - name: dog
+    uniqueID: 784625405
     locked: 0
   - name: night
-    uniqueID: 3825948171
-    locked: 0
-  - name: new
-    uniqueID: 656388469
-    locked: 0
-  - name: New Layer 10
-    uniqueID: 4258165539
+    uniqueID: 4210546287
     locked: 0

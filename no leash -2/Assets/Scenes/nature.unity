@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 45851458}
   - component: {fileID: 45851457}
   - component: {fileID: 45851456}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,8 +407,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1935623741
-  m_SortingLayer: 6
+  m_SortingLayerID: -1116919807
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 4.8333335, y: 4.8333335, z: 0}
@@ -4585,7 +4585,8 @@ GameObject:
   - component: {fileID: 234937339}
   - component: {fileID: 234937341}
   - component: {fileID: 234937342}
-  m_Layer: 6
+  - component: {fileID: 234937343}
+  m_Layer: 3
   m_Name: Brick4
   m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
@@ -4630,8 +4631,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1116919807
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7967c725b485a094fa6f5992c4b65ece, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4725,6 +4726,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &234937343
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234937338}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!213 &250642629
 Sprite:
   m_ObjectHideFlags: 0
@@ -6471,8 +6499,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1935623741
-  m_SortingLayer: 6
+  m_SortingLayerID: 784625405
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5fba73dea4f3d6c43847c9442f554f39, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6494,7 +6522,7 @@ Transform:
   m_GameObject: {fileID: 742035890}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -185.3, y: 77.8, z: 0}
+  m_LocalPosition: {x: -166.2, y: 95.8, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6609,7 +6637,7 @@ MonoBehaviour:
   jumpForce: 0
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8
   isDead: 0
   way: {x: 0, y: 0}
   ifwith: 0
@@ -8475,7 +8503,8 @@ GameObject:
   - component: {fileID: 1420422264}
   - component: {fileID: 1420422265}
   - component: {fileID: 1420422266}
-  m_Layer: 6
+  - component: {fileID: 1420422267}
+  m_Layer: 3
   m_Name: Brick1
   m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
@@ -8535,8 +8564,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1116919807
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7967c725b485a094fa6f5992c4b65ece, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8615,6 +8644,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.3, y: 0.93}
   m_EdgeRadius: 0
+--- !u!50 &1420422267
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420422262}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1443790450
 GameObject:
   m_ObjectHideFlags: 0
@@ -8627,7 +8683,8 @@ GameObject:
   - component: {fileID: 1443790451}
   - component: {fileID: 1443790453}
   - component: {fileID: 1443790454}
-  m_Layer: 6
+  - component: {fileID: 1443790455}
+  m_Layer: 3
   m_Name: Brick2
   m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
@@ -8672,8 +8729,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1116919807
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7967c725b485a094fa6f5992c4b65ece, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8767,6 +8824,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &1443790455
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443790450}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &1445828607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9902,7 +9986,8 @@ GameObject:
   - component: {fileID: 2061672882}
   - component: {fileID: 2061672884}
   - component: {fileID: 2061672885}
-  m_Layer: 6
+  - component: {fileID: 2061672886}
+  m_Layer: 3
   m_Name: Brick3
   m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
@@ -9947,8 +10032,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1116919807
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7967c725b485a094fa6f5992c4b65ece, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10042,6 +10127,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &2061672886
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061672881}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!213 &2115247686
 Sprite:
   m_ObjectHideFlags: 0
