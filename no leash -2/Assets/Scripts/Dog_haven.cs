@@ -172,6 +172,22 @@ public class Dog_haven : MonoBehaviour
                 {
                     animator.Play("static");
                 }
+                else if (Input.GetKey(KeyCode.Keypad1) || Input.GetKey(KeyCode.Alpha1))
+                {
+                    animator.Play("dance1");
+                }
+                else if (Input.GetKey(KeyCode.Keypad2) || Input.GetKey(KeyCode.Alpha2))
+                {
+                    animator.Play("dance2");
+                }
+                else if (Input.GetKey(KeyCode.Keypad3) || Input.GetKey(KeyCode.Alpha3))
+                {
+                    animator.Play("dance3");
+                }
+                else if (Input.GetKey(KeyCode.Keypad4) || Input.GetKey(KeyCode.Alpha4))
+                {
+                    animator.Play("dance4");
+                }
                 else
                 {
                     animator.Play("static");
