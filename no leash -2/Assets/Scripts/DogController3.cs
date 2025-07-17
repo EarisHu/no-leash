@@ -36,6 +36,7 @@ public class DogController3 : MonoBehaviour
 
     void Update()
     {
+        //Debug.Log(transform.localScale);
         if (!isDead && (transform.position.y < (camera.transform.position.y - camera.orthographicSize + 2 * transform.localScale.y)))
         // || transform.position.y > (camera.transform.position.y + camera.orthographicSize - 2 * transform.localScale.y)
         {
@@ -75,7 +76,9 @@ public class DogController3 : MonoBehaviour
         }
         if (collision.gameObject.tag == "MovingPlatform")
         {
+            Vector3 originalScale = transform.localScale;
             transform.parent = collision.transform;
+            transform.localScale = originalScale;
         }
         if (collision.gameObject.tag == "meat")
         {
