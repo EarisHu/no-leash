@@ -6,20 +6,22 @@ public class tree_rotate : MonoBehaviour
 {
     private Animator animator;
     private BoxCollider2D treeCollider;
+    private GameObject t;
+    private GameObject d;
 
     void Start()
     {
-        animator = GetComponent<Animator>();
         treeCollider = GetComponent<BoxCollider2D>();
+        t = GameObject.Find("tree");
+        animator = t.GetComponent<Animator>();
+        d = GameObject.Find("dog");
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void Update()
     {
-        if (other.gameObject.name == "dog") 
+        if (d.transform.position.x >= 535)
         {
             animator.SetTrigger("Hit");
-            // treeCollider.isTrigger = false;
         }
     }
-
 }
