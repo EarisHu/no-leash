@@ -18,6 +18,20 @@ TagManager:
   - map1
   - map2
   - enemy
+  - light2
+  - ghost
+  - light1
+  - light3
+  - enemy_4
+  - level5_dog
+  - damage1
+  - damage3
+  - bone1
+  - bone2
+  - bone3
+  - bone4
+  - count
+  - level4_door
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:no leash -2/Assets/Scripts/Camera_haven.cs.meta
 guid: 9c5ba507579331143918ad83c41c4183
+========
+guid: f3bca404260c52f4899a6ba2fabf6de9
+>>>>>>>> origin/hhhhh:no leash -2/Assets/Scripts/DogController3.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
