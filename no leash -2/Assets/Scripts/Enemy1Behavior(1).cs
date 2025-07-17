@@ -18,7 +18,7 @@ public class EnemyBehavior1 : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         detectionRange = 45f; 
-        speed = 100f;
+        speed = 90f;
         patrolLeftX = 337.2f;
         patrolRightX = 490.9f;
         scale = 5f;
